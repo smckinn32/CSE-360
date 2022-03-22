@@ -6,6 +6,7 @@ import java.io.*;
 
 public abstract class Profile {
     private static final int USERATTRIBUTES = 7;
+    private static final String DATA_FILE = "Users.csv";
     protected String uName;
     protected String pwd;
     protected String paymentInfo;
@@ -111,6 +112,28 @@ public abstract class Profile {
     }
 
     /*
+        setUserInfo method look for a user from the user login file
+        and set their attributes to the instance that it was called from.
+        the function returns 0 if user was found. Otherwise, it returns -1.
+        @param, the userName and passWord of the user, respectively.
+    */
+    public int setUserInfo(String userName, String passWord) {
+        if (getUserData(userName, passWord) != null) {
+            String[] user = getUserData(userName, passWord);
+            uName = user[0];
+            pwd = user[1];
+            firstName = user[2];
+            lastName = user[3];
+            address = user[4];
+            phoneNum = user[5];
+            isAdmin = Boolean.parseBoolean(user[6]);
+            return 0;
+        }
+        else
+            return -1;
+    }
+
+    /*
         getUserData method get The user data from txt file.
         The function takes the userName and passWord @Param
         and returns a list of the user data with format
@@ -122,13 +145,12 @@ public abstract class Profile {
         String[] user = new String[7];
         boolean found = false;
         try {
-            BufferedReader br = new BufferedReader(new FileReader("Users.csv"));
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
             while ((line = br.readLine()) != null && !found) {
                 user = line.split(";");
                 if (user[0].equals(userName) && user[1].equals(passWord)) {
                     return user;
                 }
-
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -146,7 +168,7 @@ public abstract class Profile {
         String line = uName + ";" + pwd + ";" + firstName + ";" + lastName
                             + ";" + address + ";" + phoneNum + ";" + isAdmin + "\n";
         try {
-            FileWriter fw = new FileWriter("Users.csv", true);
+            FileWriter fw = new FileWriter(DATA_FILE, true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(line);
             bw.close();
