@@ -63,6 +63,7 @@ public class Menu {
     return foundDishes;
   }
 
+  /*  Adds an item to the end of the menu text file & then updates the menu List*/
   public static void addMenuItem(String dName, Double price, Int timeTM, String[] ing, String[] tags){
     BufferedWriter bw = new BufferedWriter(new FileWriter(menuFile, true));
     dName += "|";
@@ -95,6 +96,9 @@ public class Menu {
     }
 
     bw.close();
+    //Finished writing to file, now update the menu array list object with the new dish.
+    Dish newDish = Dish(ing, tags, dName, price, timeTM);
+    menu.add(newDish);
   }
 
   /*  Searches the menu for a specfic item.
