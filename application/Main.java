@@ -23,10 +23,11 @@ public class Main extends Application {
 
 		try {
 
-			Parent root = FXMLLoader.load(getClass().getResource("/FXML/CreateAccountScene.fxml"));
+			@SuppressWarnings("ConstantConditions") Parent root = FXMLLoader.load(getClass().getResource("/FXML/CreateAccountScene.fxml"));
 			
 			Scene scene = new Scene(root);
 
+			// Applies CSS to the first pane.
 			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 
 			scene.getStylesheets().add(css);
@@ -55,8 +56,7 @@ public class Main extends Application {
 	}
 	// Creates a function with the passed in parameter Stage that creates a dialogue box to make sure the user wants to exit the program.
 	public void logoutFunction(Stage stage) {
-		
-		
+
 		// Creates confirmation dialogue window before exiting program.
 		Alert logoutAlert = new Alert(AlertType.CONFIRMATION);
 		logoutAlert.setTitle("Logout");

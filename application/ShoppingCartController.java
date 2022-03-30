@@ -1,4 +1,5 @@
 package application;
+import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -31,18 +32,32 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
+import javax.imageio.IIOParam;
 
+public class ShoppingCartController extends Controller{
 
+    // Declarations
+    private IIOParam loader;
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
 
-public class AccountSettingsController {
+    // Instantiates the cartList function.
+    @FXML
+    public ListView<String> cartList;
 
-	// Initializes scenes.
-	private Stage stage;
-	private Scene AccountSettingsScene;
-	private Parent root;
-	
-	public Scene returnAccountSettingsScene() {
-		return AccountSettingsScene;
-	}
-	
+    // Declares an empty arrayList that will populate the shopping cart.
+    ArrayList<String> menuList = new ArrayList<>(
+            Arrays.asList(""));
+
+    // Function to add specific item to the shoppingCart
+    public void updateShoppingCart() {
+        menuList.add("Success");
+        cartList.getItems().addAll(menuList);
+    }
+
+    @FXML
+    private Button loginScreenButton;
+
 }
+

@@ -37,7 +37,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
-public class Controller implements Initializable{
+public class Controller implements Initializable {
 
 	// Creates primary scene/stage
 	private Stage stage;
@@ -79,24 +79,64 @@ public class Controller implements Initializable{
 	
 	// Creates String Array used for Shopping Cart
 	public ObservableList<String> cartArray = FXCollections.observableArrayList("Test - !", "Beta", "Gamma", "Delta", "Epsilon", "Zeta", "Eta", "Theta", "Rho");
-	
-	public void updateShoppingCart() {
-		
+
+	// MULTIPLE CONTROLLER FUNCTIONALITY DEMONSTRATION FUNCTION:
+	public void addToShoppingCart(ActionEvent event) throws IOException {
+
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
+
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+		root = loader.load();
+
+		// Creates ShoppingCartController obj in order to be able to communicate between controllers and pass data between them.
+		ShoppingCartController ShoppingCartController = loader.getController();
+
+		scene = new Scene(root);
+
+		stage.setScene(scene);
+
+		stage.show();
+
+		// Adds CSS styling to new scene
+		String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+		scene.getStylesheets().add(css);
+
+		// Runs the updateShoppingCart function present in the seperate controller.
+		ShoppingCartController.updateShoppingCart();
 	}
-	
-	
-	public void addToShoppingCart(ActionEvent event) {
-		cartList.getItems().add("Test");
-		//controller.setData(cartArray);
+
+
+	public void changetoShoppingCartTEST(ActionEvent event) throws IOException {
+
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
+
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+		root = loader.load();
+
+		ShoppingCartController ShoppingCartController = loader.getController();
+
+		scene = new Scene(root);
+
+		stage.setScene(scene);
+
+		stage.show();
+
+		// Adds CSS styling to new scene
+		String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+		scene.getStylesheets().add(css);
+
+		// Updates shopping cart upon switching to the shopping cart scene.
+		//updateShoppingCart();
 	}
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		//cartList.setItems(cartArray);
 	}
 
-	
 	// Function to change visibility of password check-box.
 	@FXML
 	void changeVisibility(ActionEvent event) {
@@ -298,7 +338,7 @@ public class Controller implements Initializable{
 	}
 
 	// Checks if the currently selected search item matches the String, if it does it moves to that given scene.
-	public void changeTest(MouseEvent event) throws IOException {
+	public void searchFunction(MouseEvent event) throws IOException {
 
 		// Creates a string that holds the contents of the currently selected item from the pane view.
 		String selected = searchBox.getSelectionModel().getSelectedItem();
