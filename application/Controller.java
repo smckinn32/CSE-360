@@ -151,7 +151,7 @@ public class Controller implements Initializable {
 		passwordText.setVisible(false);
 	}
 
-// Function used by button to switch to Login Screen From the Create Account Screen
+	// Function used by button to switch to Login Screen From the Create Account Screen
 	public void changetoLoginScreen(ActionEvent event) throws IOException {
 
 		Parent root = FXMLLoader.load(getClass().getResource("/FXML/LoginScreen.fxml"));
@@ -169,7 +169,7 @@ public class Controller implements Initializable {
 		scene.getStylesheets().add(css);
 	}
 
-// Function used by button to switch to the Main Menu
+	// Function used by button to switch to the Main Menu
 	public void changetoMenu(ActionEvent event) throws IOException {
 
 		Parent root = FXMLLoader.load(getClass().getResource("/FXML/Menu.fxml"));
