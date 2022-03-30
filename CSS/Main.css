@@ -1,0 +1,100 @@
+/************************************************************
+ * Author: Aften Elliott
+ * Date: 3/25/2022
+ * Class: CSE360 Mon 3pm
+ ************************************************************/
+ 
+// Imports custom font from file.
+@font-face {
+    src: url("/fonts/Acumin.ttf");
+}
+
+// Makes most elements in the text entry buttons in order to make them blend into the GUI.
+.text-area, .text-area .viewport, .text-area .content {
+    -fx-background-color: transparent ;
+}
+
+// Removes background from text field buttons to blend into the GUI.
+.text-field {
+	-fx-background-color: transparent ;
+}
+
+// Changing global text to grey and font to match GUI.
+.root {
+	-fx-dark-text-color: "#A6BCD0" ;
+ 	-fx-mid-text-color: "#A6BCD0" ;
+ 	-fx-light-text-color: "#A6BCD0" ;
+ 	//-fx-font-family: "acumin-pro-semi-condensed, sans-serif;";
+ 	-fx-font-family: "Acumin Pro SemiCondensed;";
+ }
+ // Makes background of checkbox transparent and removes borders.
+.check-box>.box {
+  -fx-background-insets: 0;
+  -fx-background-radius: 0;
+  -fx-background-color: transparent;
+}
+
+// Changes unchecked state to custom image.
+.check-box>.box>.mark {
+  -fx-background-image: url("/images/EyeOff.png");
+  -fx-background-position: center;
+  -fx-background-repeat: stretch;
+  -fx-shape: none;
+  -fx-padding: 45px;
+}
+
+// Changes checked state to custom image.
+.check-box:selected>.box>.mark {
+  -fx-background-color: transparent;
+  -fx-background-image: url("/images/EyeOn.png");
+} 	
+
+// Changes Table-view for the CheckoutCart to transparent so that it blends into the GUI.
+#cartList {
+	-fx-background-color: transparent;
+  	//-fx-border-color: all-dialog-border-color;
+	-fx-border-width: 1;
+	-fx-table-header-border-color: transparent;
+	-fx-table-cell-border-color: transparent;
+	-fx-text-fill: white;
+}
+
+// Changes the prompt and main text of the expiration color to white.
+#CreditCardNumber {
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: white;
+}
+
+// Changes the prompt and main text of the expiration color to white.
+#Expiration {
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: white;
+}
+
+// Changes the prompt and main text of the expiration color to white.
+#CSV {
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: white;
+}
+
+#CreditCardTable {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+ 
+.table-view .corner {
+    //-fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header-background{
+    //-fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:selected {
+   -fx-background-color: steelblue; 
+}
+.table-row-cell:selected .text {
+       -fx-fill: red ;
+}
