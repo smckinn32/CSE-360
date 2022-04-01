@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PipeLine">
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>
@@ -19,9 +19,9 @@
                </image>
             </ImageView>
             <Button layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
-            <Button layoutX="1627.0" layoutY="25.0" mnemonicParsing="false" onAction="#changetoShoppingCart" opacity="0.0" prefHeight="38.0" prefWidth="40.0" text="Shopping Cart Button" />
-            <Button layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changetoAccountSettings" opacity="0.0" prefHeight="38.0" prefWidth="40.0" text="Settings Button" />
-            <Button layoutX="185.0" layoutY="20.0" mnemonicParsing="false" onAction="#changetoMenu" opacity="0.0" prefHeight="55.0" prefWidth="54.0" text="Home Button" />
+            <Button layoutX="1627.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="40.0" text="Shopping Cart Button" />
+            <Button layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="40.0" text="Settings Button" />
+            <Button layoutX="185.0" layoutY="20.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="55.0" prefWidth="54.0" text="Home Button" />
             <TextField fx:id="searchButton" layoutX="1357.0" layoutY="30.0" onAction="#search" onKeyPressed="#searchVisibility" prefHeight="25.0" prefWidth="135.0">
                <font>
                   <Font size="14.0" />

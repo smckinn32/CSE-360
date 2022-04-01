@@ -54,17 +54,21 @@ public class Main extends Application {
 		}
 
 	}
-	// Creates a function with the passed in parameter Stage that creates a dialogue box to make sure the user wants to exit the program.
+	// Creates a function that creates a pop-up dialogue to make sure the user wants to exit the program.
 	public void logoutFunction(Stage stage) {
 
 		// Creates confirmation dialogue window before exiting program.
 		Alert logoutAlert = new Alert(AlertType.CONFIRMATION);
+
 		logoutAlert.setTitle("Logout");
-		logoutAlert.setHeaderText("You're about to logout!");
-		logoutAlert.setContentText("Are you sure you want to logout?");
+
+		logoutAlert.setHeaderText("You're about to close the program!");
+
+		logoutAlert.setContentText("Are you sure you exit?");
 		
 		// Finds current stage and changes the Icon of the window
 		stage = (Stage) logoutAlert.getDialogPane().getScene().getWindow();
+
 		stage.getIcons().add(new Image("images/ApplicationIcon.png"));
 		
 		// Changes icon of the pop out box.
