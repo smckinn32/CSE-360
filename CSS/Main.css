@@ -144,3 +144,17 @@
 	-fx-background-color: "#748A9D";
 	-fx-text-fill: white;
 }
+
+/* Centers the text on the Menu List View */
+#menuListView .list-cell {
+	-fx-alignment: center;
+}
+
+#menuListView {
+	-fx-background-color: transparent;
+//-fx-border-color: all-dialog-border-color;
+	-fx-border-width: 1;
+	-fx-table-header-border-color: transparent;
+	-fx-table-cell-border-color: transparent;
+	-fx-text-fill: white;
+}

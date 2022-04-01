@@ -78,7 +78,7 @@ public class Controller {
 	public ListView<String> cartList;
 
 	/* ------------------------------ Menu Array List: ------------------------------ */
-	ArrayList<String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
+	ArrayList <String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
 
 	/* -------------------------------------------------------------------------- */
 	/*                                SCENE CHANGE FUNCTIONS:                     */
@@ -90,7 +90,7 @@ public class Controller {
 			// Grabs the source, that being the selected button, and then puts it into a temporary button/
 			Button FXID = (Button) event.getSource();
 
-			// Fetches the button id and compares it against a sereis of switch cases.
+			// Switches to the login Screen Scene if the FXID matches the case.
 			switch (FXID.getId()) {
 				case "SignIn":
 					FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/LoginScreen.fxml"));
@@ -111,6 +111,7 @@ public class Controller {
 
 					// Breaks Switch statement.
 					break;
+				// Switches to the Menu Screen if the FX:ID matches
 				case "Login":
 
 					loader = new FXMLLoader(getClass().getResource("/FXML/Menu.fxml"));
@@ -118,6 +119,9 @@ public class Controller {
 					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 					root = loader.load();
+
+					// Creates MenuController so that we can activate functions from it.
+					MenuController MenuController = loader.getController();
 
 					scene = new Scene(root);
 
@@ -128,6 +132,9 @@ public class Controller {
 					// Adds CSS styling to new scene
 					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 					scene.getStylesheets().add(css);
+
+					// Runs the updateMenuListView function present in the seperate controller.
+					MenuController.updateMenuListView();
 
 					// Breaks switch statement.
 					break;
