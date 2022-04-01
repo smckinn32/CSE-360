@@ -1,0 +1,9 @@
+6
+French Fries|7.69|5|potato,salt|vegan,vegetarian|
+Buffalo Wings|15.15|10|chicken|cheap|
+Spaghetti|20.00|10|flour,egg,tomato|some,tags,that,will match prefrences|
+Lasagna|14.55|15|flour,egg,tomato,cheese|will,fill,from,prefrences|
+Chicken Marsala|25.72|20|mushrooms,wine sauce,chicken,cheese,tomato|tasty|
+Shrimp Scampi|13.49|30|linguine,shrimp,olive oil,butter,garlic,dry white wine,Salt,black pepper,lemon juice,parsley|will,fill,from,prefrences|
+
+Dish Name|price|timeToMake|ingredients, separated by commas, no more than 10 items|tags for dish, separated by commas, no more than 5 tags|
