@@ -20,10 +20,10 @@
                   <Image url="@../images/OrderHistory.png" />
                </image>
             </ImageView>
-            <Button layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
-            <Button layoutX="1631.0" layoutY="25.0" mnemonicParsing="false" onAction="#changetoShoppingCart" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="Shopping Cart Button" />
-            <Button layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changetoAccountSettings" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="Settings Button" />
-            <Button layoutX="200.0" layoutY="27.0" mnemonicParsing="false" onAction="#changetoMenu" opacity="0.0" prefHeight="38.0" prefWidth="29.0" text="Home Button" />
+            <Button fx:id="exitButton" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
+            <Button fx:id="shoppingCartButton" layoutX="1631.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="Shopping Cart Button" />
+            <Button fx:id="settingsButton" layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="Settings Button" />
+            <Button fx:id="homeButton" layoutX="200.0" layoutY="27.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="29.0" text="Home Button" />
             <TextField fx:id="searchButton" layoutX="1357.0" layoutY="30.0" onAction="#search" onKeyPressed="#searchVisibility" prefHeight="25.0" prefWidth="135.0">
                <font>
                   <Font size="14.0" />

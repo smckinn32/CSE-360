@@ -59,12 +59,16 @@ public class Main extends Application {
 
 		// Creates confirmation dialogue window before exiting program.
 		Alert logoutAlert = new Alert(AlertType.CONFIRMATION);
+
 		logoutAlert.setTitle("Logout");
+
 		logoutAlert.setHeaderText("You're about to logout!");
+
 		logoutAlert.setContentText("Are you sure you want to logout?");
 		
 		// Finds current stage and changes the Icon of the window
 		stage = (Stage) logoutAlert.getDialogPane().getScene().getWindow();
+
 		stage.getIcons().add(new Image("images/ApplicationIcon.png"));
 		
 		// Changes icon of the pop out box.

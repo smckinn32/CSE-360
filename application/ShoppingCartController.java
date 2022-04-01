@@ -33,6 +33,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 import javax.imageio.IIOParam;
+import java.io.*;
+
 
 public class ShoppingCartController extends Controller{
 
@@ -42,22 +44,18 @@ public class ShoppingCartController extends Controller{
     private Stage stage;
     private Scene scene;
 
-    // Instantiates the cartList function.
+    // Instantiates the cartListView so it can be used in functions.
     @FXML
-    public ListView<String> cartList;
+    public ListView<String> cartListView;
 
     // Declares an empty arrayList that will populate the shopping cart.
-    ArrayList<String> menuList = new ArrayList<>(
-            Arrays.asList(""));
+    ArrayList<String> cartArray = new ArrayList<>(Arrays.asList());
 
-    // Function to add specific item to the shoppingCart
-    public void updateShoppingCart() {
-        menuList.add("Success");
-        cartList.getItems().addAll(menuList);
+    // Function to add specific item to the shoppingCart, takes a String as an argument.
+    public void addToShoppingCart(String MenuItem) {
+        cartArray.add(MenuItem);
+        cartListView.getItems().addAll(cartArray);
+        System.out.print(cartArray);
     }
 
-    @FXML
-    private Button loginScreenButton;
-
 }
-

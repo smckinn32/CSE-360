@@ -132,7 +132,7 @@
 /* Changes color of search box */
 #searchBox {
 	//-fx-background-color: "#748A9D";
-	-fx-background-color: "#A6BCD0";
+	//-fx-background-color: "#A6BCD0";
 
 }
 
