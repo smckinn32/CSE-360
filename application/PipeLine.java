@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import javafx.application.Platform;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,14 +26,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
-import javafx.scene.input.PickResult;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
-import javafx.event.EventHandler;
-import javafx.scene.input.PickResult;
 
-public class Controller {
+public class PipeLine {
 
 	/* -------------------------------------------------------------------------- */
 	/*                                DECLARATIONS:                               */
@@ -112,7 +109,7 @@ public class Controller {
 					// Breaks Switch statement.
 					break;
 				// Switches to the Menu Screen if the FX:ID matches
-				case "Login":
+				case "Login", "homeButton":
 
 					loader = new FXMLLoader(getClass().getResource("/FXML/Menu.fxml"));
 
@@ -138,6 +135,84 @@ public class Controller {
 
 					// Breaks switch statement.
 					break;
+				case "shoppingCartButton":
+
+					loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
+
+					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+					root = loader.load();
+
+					scene = new Scene(root);
+
+					stage.setScene(scene);
+
+					stage.show();
+
+					// Adds CSS styling to new scene
+					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+					scene.getStylesheets().add(css);
+
+					// Breaks switch statement.
+					break;
+				case "settingsButton", "YourAccountButton":
+					loader = new FXMLLoader(getClass().getResource("/FXML/AccountSettings.fxml"));
+
+					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+					root = loader.load();
+
+					scene = new Scene(root);
+
+					stage.setScene(scene);
+
+					stage.show();
+
+					// Adds CSS styling to new scene
+					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+					scene.getStylesheets().add(css);
+
+					// Breaks switch statement.
+					break;
+				case "YourOrdersButton":
+					loader = new FXMLLoader(getClass().getResource("/FXML/YourOrders.fxml"));
+
+					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+					root = loader.load();
+
+					scene = new Scene(root);
+
+					stage.setScene(scene);
+
+					stage.show();
+
+					// Adds CSS styling to new scene
+					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+					scene.getStylesheets().add(css);
+
+					// Breaks switch statement.
+					break;
+				case "SearchPreferencesButton":
+					loader = new FXMLLoader(getClass().getResource("/FXML/SearchPreferences.fxml"));
+
+					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+					root = loader.load();
+
+					scene = new Scene(root);
+
+					stage.setScene(scene);
+
+					stage.show();
+
+					// Adds CSS styling to new scene
+					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+					scene.getStylesheets().add(css);
+
+					// Breaks switch statement.
+					break;
+
 			}
 		}
 

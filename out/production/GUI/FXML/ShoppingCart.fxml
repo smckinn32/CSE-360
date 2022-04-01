@@ -20,15 +20,15 @@
             </ImageView>
             <Button fx:id="exitButton" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
             <Button fx:id="shoppingCartButton" layoutX="1631.0" layoutY="25.0" mnemonicParsing="false" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="Shopping Cart Button" />
-            <Button fx:id="settingsButton" layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="Settings Button" />
+            <Button fx:id="settingsButton" layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="Settings Button" />
             <Button fx:id="homeButton" layoutX="200.0" layoutY="27.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="29.0" text="Home Button" />
-            <TextField fx:id="searchButton" layoutX="1357.0" layoutY="30.0" prefHeight="25.0" prefWidth="135.0">
+            <TextField fx:id="searchButton" layoutX="1357.0" layoutY="30.0" onAction="#search" onKeyPressed="#searchVisibility" prefHeight="25.0" prefWidth="135.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
             <ListView fx:id="searchBox" layoutX="1325.0" layoutY="67.0" prefHeight="135.0" prefWidth="170.0" visible="false" />
-            <Button layoutX="1503.0" layoutY="25.0" mnemonicParsing="false" opacity="0.0" prefHeight="38.0" prefWidth="86.0" text="Search button" />
+            <Button layoutX="1503.0" layoutY="25.0" mnemonicParsing="false" onAction="#search" opacity="0.0" prefHeight="38.0" prefWidth="86.0" text="Search button" />
             <Button layoutX="1020.0" layoutY="738.0" mnemonicParsing="false" opacity="0.0" prefHeight="58.0" prefWidth="450.0" text="Finish check-out" />
             <ListView fx:id="cartListView" layoutX="416.0" layoutY="179.0" prefHeight="565.0" prefWidth="515.0" />
             <Button fx:id="removeFromCart" layoutX="416.0" layoutY="767.0" mnemonicParsing="false" opacity="0.0" prefHeight="58.0" prefWidth="247.0" text="RemoveFromCart" />

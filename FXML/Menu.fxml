@@ -19,7 +19,7 @@
                </image>
             </ImageView>
             <Button fx:id="exitButton" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
-            <Button fx:id="shoppingCartButton2" layoutX="1629.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="38.0" text="Shopping Cart Button" />
+            <Button fx:id="shoppingCartButton" layoutX="1629.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="38.0" text="Shopping Cart Button" />
             <Button fx:id="settingsButton" layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="38.0" text="Settings Button" />
             <Button fx:id="homeButton" layoutX="200.0" layoutY="27.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="29.0" text="Home Button" />
             <TextField fx:id="searchButton" layoutX="1357.0" layoutY="30.0" onAction="#search" onKeyPressed="#searchVisibility" prefHeight="25.0" prefWidth="135.0">

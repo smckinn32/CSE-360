@@ -50,7 +50,7 @@
 } 	
 
 /* Changes Table-view for the CheckoutCart to transparent so that it blends into the GUI. */
-#cartList {
+#cartListView {
 	-fx-background-color: transparent;
   	//-fx-border-color: all-dialog-border-color;
 	-fx-border-width: 1;
@@ -157,4 +157,5 @@
 	-fx-table-header-border-color: transparent;
 	-fx-table-cell-border-color: transparent;
 	-fx-text-fill: white;
+	-fx-font-size: 20pt ;
 }

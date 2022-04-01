@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import javax.imageio.IIOParam;
 
 
-public class AccountSettingsController extends PipeLine {
+public class CreateAccountController extends PipeLine {
 
 
 }
