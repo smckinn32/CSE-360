@@ -23,10 +23,10 @@ public class LoginScreenController extends PipeLine {
 
 
     public void isValidUser(ActionEvent event) throws IOException {
-        if(user.getUserData(userName.getText(), password.getText()) != null)
+        //if(user.getUserData(userName.getText(), password.getText()) != null)
             changeScene(event);
-        else
-            System.out.println("User does not exist!");
+        /*else
+            System.out.println("User does not exist!");*/
     }
 
 }
