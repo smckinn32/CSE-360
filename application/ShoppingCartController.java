@@ -4,22 +4,26 @@
  * Class: CSE360 Mon 3pm
  ************************************************************/
 package application;
+
 import javafx.collections.ObservableList;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
+
 import javax.imageio.IIOParam;
 import java.io.*;
+
 import javafx.collections.FXCollections;
+
 import java.util.Arrays;
 
 
@@ -62,13 +66,13 @@ public class ShoppingCartController extends PipeLine {
 
     // Instantiates the cartListView so that it can be used in functions.
     @FXML
-    public ListView <String> cartListView;
+    public ListView<String> cartListView;
 
     // Creates an array that contains the users card information.
     ArrayList<String> card = new ArrayList<String>();
 
     // Declares an observable arrayList that will populate the shopping cart.
-    public ObservableList <String> cartArray = FXCollections.observableArrayList();
+    public ObservableList<String> cartArray = FXCollections.observableArrayList();
 
     /* -------------------------------------------------------------------------- */
     /*                                FUNCTIONS:                                  */
@@ -82,7 +86,7 @@ public class ShoppingCartController extends PipeLine {
 
             BufferedWriter bWriter = new BufferedWriter(fWriter);
 
-            String list = MenuItem.toString().replaceAll("[\\[\\]]","");
+            String list = MenuItem.toString().replaceAll("[\\[\\]]", "");
 
             bWriter.write(String.valueOf(list) + "\n");
 
@@ -107,7 +111,7 @@ public class ShoppingCartController extends PipeLine {
         // Reads teh text file and puts all of those items into the array.
         try {
             Scanner s = new Scanner(new File(cartContents));
-            while (s.hasNext()){
+            while (s.hasNext()) {
                 cartArray.add(s.next());
             }
         } catch (FileNotFoundException e) {
@@ -155,10 +159,9 @@ public class ShoppingCartController extends PipeLine {
     void removeCart(MouseEvent event) {
         int selectedItem = cartListView.getSelectionModel().getSelectedIndex();
         // if selected == 0
-        if (selectedItem < 1)
-        {
+        if (selectedItem < 1) {
             myLabel.setText("Nothing Selected, please select an item to remove.");
-        }else{
+        } else {
             cartListView.getItems().remove(selectedItem);
             myLabel.setText("");
         }
@@ -168,6 +171,32 @@ public class ShoppingCartController extends PipeLine {
     @FXML
     public void clearCart(ActionEvent event) {
 
-        System.out.println(menuList);
+    }
+
+    @FXML
+    private TableView<Cart> cartTableView;
+
+    @FXML
+    private TableColumn<Cart, String> menuItemType;
+
+    @FXML
+    private TableColumn<Cart, Integer> menuItemAmount;
+
+    ObservableList<Cart> menuTableList = FXCollections.observableArrayList();
+
+    public void fuckme(int fuck1, String fuck2) {
+        Cart Cart = new Cart(fuck1, fuck2);
+    }
+    public void testfunc() {
+        menuItemAmount.setCellValueFactory(new PropertyValueFactory<Cart, Integer>("menuItemAmount"));
+        menuItemType.setCellValueFactory(new PropertyValueFactory<Cart, String>("menuItemType"));
+
+        fuckme(20,"test");
+        Cart Cart = new Cart(20, "String");
+        cartTableView.setItems(menuTableList);
+
+        cartTableView.refresh();
+
+        System.out.println(menuTableList);
     }
 }
