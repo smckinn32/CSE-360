@@ -6,7 +6,6 @@
 package application;
 import  javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
@@ -17,9 +16,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Main extends Application {
 	@Override
-	public void start(Stage stage) {
+	public void start(Stage stage) throws IOException {
 
 		try {
 
@@ -44,8 +46,13 @@ public class Main extends Application {
 				
 			// 'Consumes' the event if the user presses cancel so that the program doesn't close.
 			event.consume();
-				
-			logoutFunction(stage); });
+
+				try {
+					logoutFunction(stage);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			});
 
 		} catch (Exception e) {
 
@@ -55,7 +62,7 @@ public class Main extends Application {
 
 	}
 	// Creates a function that creates a pop-up dialogue to make sure the user wants to exit the program.
-	public void logoutFunction(Stage stage) {
+	public void logoutFunction(Stage stage) throws IOException {
 
 		// Creates confirmation dialogue window before exiting program.
 		Alert logoutAlert = new Alert(AlertType.CONFIRMATION);
@@ -74,9 +81,13 @@ public class Main extends Application {
 		// Changes icon of the pop out box.
 		logoutAlert.getDialogPane().setGraphic(new ImageView("images/ErrorIcon.png"));
 		
-		// Exits the program if the user selects yes.
+		// Exits the program if the user selects yes. Deletes any contents within specified files.
 		if(logoutAlert.showAndWait().get() == ButtonType.OK) {
-		Platform.exit();
+			// Clears the contents of the cart from text file
+			new FileWriter("TextFiles/cartContents.csv", false).close();
+
+			// Exits the program.
+			Platform.exit();
 		}
 	}
 	

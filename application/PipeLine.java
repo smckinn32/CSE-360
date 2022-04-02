@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -69,10 +71,6 @@ public class PipeLine {
 	// Creates node used in scene switching
 	@FXML
 	private Node MainNode;
-
-	// Creates the FXML List-view for the shopping cart functionality.
-	@FXML
-	public ListView<String> cartList;
 
 	/* ------------------------------ Menu Array List: ------------------------------ */
 	ArrayList <String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
@@ -143,6 +141,9 @@ public class PipeLine {
 
 					root = loader.load();
 
+					// Creates an object of the ShoppingCartController to be able to run functions from the pipeline.
+					ShoppingCartController ShoppingCartController = loader.getController();
+
 					scene = new Scene(root);
 
 					stage.setScene(scene);
@@ -152,6 +153,9 @@ public class PipeLine {
 					// Adds CSS styling to new scene
 					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 					scene.getStylesheets().add(css);
+
+					// Updates Shopping Cart when switching to the shopping cart scene.
+					ShoppingCartController.updateShoppingCart();
 
 					// Breaks switch statement.
 					break;
@@ -242,7 +246,7 @@ public class PipeLine {
 		String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 		scene.getStylesheets().add(css);
 
-		// Runs the updateShoppingCart function present in the seperate controller.
+		// Runs the addToShoppingCart function present in the ShoppingCartcontroller to add a specific item to the shopping cart.
 		ShoppingCartController.addToShoppingCart("Test");
 	}
 
@@ -292,6 +296,13 @@ public class PipeLine {
 			// Adds CSS styling to new scene
 			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 			scene.getStylesheets().add(css);
+
+			// Clears the contents of the cart when logging out.
+			try {
+				new FileWriter("TextFiles/cartContents.csv", false).close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
