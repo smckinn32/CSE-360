@@ -132,19 +132,14 @@
 
 /* Changes color of search box */
 #searchBox {
-	//-fx-background-color: "#748A9D";
-	//-fx-background-color: "#A6BCD0";
-
+	-fx-border-color: "#A6BCD0";
+	-fx-background-color: white;
 }
 
-.list-view .list-cell:even {
-	//-fx-background-color: "#748A9D";
-	//-fx-text-fill: white;
-}
-.list-view .list-cell:odd {
-	//-fx-background-color: "#748A9D";
+/* Centers the text on the search box and makes the background transparent View */
+#searchBox .list-cell {
+	-fx-alignment: center;
 	-fx-background-color: transparent;
-	//-fx-text-fill: white;
 }
 
 /* Centers the text on the Menu List View */
@@ -152,6 +147,7 @@
 	-fx-alignment: center;
 	-fx-background-color: transparent;
 }
+
 /* Makes background of list view transparent */
 #cartListView .list-cell {
 	//-fx-background-color: transparent;
@@ -161,8 +157,6 @@
 
 .list-view {
 	-fx-selection-bar: "#6200EE";
-	//-fx-selection-bar-non-focused: "#6200EE";
-    -fx-border-color: "#6200EE";
 }
 
 #menuListView {
@@ -171,9 +165,21 @@
 	-fx-table-header-border-color: transparent;
 	-fx-table-cell-border-color: transparent;
 	-fx-text-fill: white;
-	-fx-font-size: 20pt ;
+	-fx-font-size: 25pt ;
+	-fx-border-color: transparent;
 }
-.list-cell:filled:selected {
-	-fx-background-color: -fx-background ;
-	-fx-background-insets: 0 ;
+
+/* Changes the checkbox images for the search preferences functionality */
+#testBox >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#testBox:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
 }

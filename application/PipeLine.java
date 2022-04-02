@@ -360,7 +360,7 @@ public class PipeLine {
 		// Creates a string that holds the contents of the currently selected item from the pane view.
 		String selected = searchBox.getSelectionModel().getSelectedItem();
 
-		if (selected == "Alpha") {
+		if (selected == "Lasagna") {
 			Parent root = FXMLLoader.load(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
 
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
