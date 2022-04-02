@@ -77,42 +77,44 @@ public class ShoppingCartController extends PipeLine {
 
     // Function to add specific item to the shoppingCart, takes a String as an argument.
     public void addToShoppingCart(String MenuItem) {
-        // Adds the String parameter into the cartArray
-        cartArray.add(MenuItem);
-
-        // Sets contents of the array into the list view on the shopping cart page.
-        cartListView.getItems().addAll(cartArray);
-
         try {
             FileWriter fWriter = new FileWriter(cartContents, true);
 
             BufferedWriter bWriter = new BufferedWriter(fWriter);
 
-            String list = cartArray.toString().replaceAll("[\\[\\]]","");
+            String list = MenuItem.toString().replaceAll("[\\[\\]]","");
 
             bWriter.write(String.valueOf(list) + "\n");
 
             bWriter.close();
 
-            System.out.println(cartArray + "\n");
         } catch (Exception e) {
             System.out.println(e);
         }
+
+        // Sets the contents of the array into the list view on the shopping cart page.
+        cartListView.getItems().addAll(cartArray);
+
+        // Refreshes the list view.
+        cartListView.refresh();
+
+        System.out.println(cartArray);
     }
 
-    // Populates the cartArray based on contents of the textfile, then pushes those to the listview when switching to the shopping cart.
+    // Populates the cartArray based on contents of the text-file, then pushes those to the listview when switching to the shopping cart.
     public void updateShoppingCart() {
 
+        // Reads teh text file and puts all of those items into the array.
         try {
             Scanner s = new Scanner(new File(cartContents));
             while (s.hasNext()){
                 cartArray.add(s.next());
-            //s.close();
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
+        // Adds the contents of the array to the list-view.
         cartListView.getItems().addAll(cartArray);
 
         System.out.print(cartArray);
@@ -155,7 +157,7 @@ public class ShoppingCartController extends PipeLine {
         // if selected == 0
         if (selectedItem < 1)
         {
-            myLabel.setText("Error! Nothing Selected, please select an item to remove.");
+            myLabel.setText("Nothing Selected, please select an item to remove.");
         }else{
             cartListView.getItems().remove(selectedItem);
             myLabel.setText("");

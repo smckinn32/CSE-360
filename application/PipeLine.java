@@ -225,7 +225,7 @@ public class PipeLine {
 	/* ------------------------------------------------------------------------------------------------ */
 
 	// MULTIPLE CONTROLLER FUNCTIONALITY DEMONSTRATION FUNCTION:
-	public void addToShoppingCart(ActionEvent event) throws IOException {
+	public void addToShoppingCartButton(ActionEvent event) throws IOException {
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
 
@@ -248,6 +248,7 @@ public class PipeLine {
 
 		// Runs the addToShoppingCart function present in the ShoppingCartcontroller to add a specific item to the shopping cart.
 		ShoppingCartController.addToShoppingCart("Test");
+		ShoppingCartController.updateShoppingCart();
 	}
 
 	/* -------------------------------------------------------------------------- */
