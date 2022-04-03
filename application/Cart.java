@@ -4,21 +4,24 @@ package application;
 public class Cart {
 
     // Creates strings used by a contructor to populate table view.
-    public String menuItemType;
+    private String menuItemType;
 
-    public int menuItemAmount;
+    private int menuItemAmount;
 
     // Contructor to pass parameters to the table-view.
     public Cart(int menuItemAmount, String menuItemType) {
         this.menuItemType = menuItemType;
         this.menuItemAmount = menuItemAmount;
+        //this.menuItemType = new String(menuItemType);
+        //this.menuItemAmount = new int (menuItemAmount);
     }
 
-    public String getmenuItemType() {
+    public final String getmenuItemType() {
         return menuItemType;
     }
 
-    public int getmenuItemAmount() {
+    public final int getmenuItemAmount() {
+
         return menuItemAmount;
     }
 }

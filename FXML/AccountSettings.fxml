@@ -52,7 +52,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="passwordHidden" layoutX="931.0" layoutY="471.0" prefHeight="30.0" prefWidth="403.0">
+            <PasswordField fx:id="password" layoutX="931.0" layoutY="471.0" prefHeight="30.0" prefWidth="403.0">
                <font>
                   <Font size="14.0" />
                </font>

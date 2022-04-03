@@ -9,21 +9,16 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import javax.imageio.IIOParam;
 import java.io.*;
-
 import javafx.collections.FXCollections;
-
 import java.util.Arrays;
 
 
@@ -173,6 +168,10 @@ public class ShoppingCartController extends PipeLine {
 
     }
 
+
+    /* -------------------------------------------------------------------------- */
+    /*                                TESTING:                                    */
+    /* -------------------------------------------------------------------------- */
     @FXML
     private TableView<Cart> cartTableView;
 
@@ -182,17 +181,20 @@ public class ShoppingCartController extends PipeLine {
     @FXML
     private TableColumn<Cart, Integer> menuItemAmount;
 
-    ObservableList<Cart> menuTableList = FXCollections.observableArrayList();
+    public final ObservableList <Cart> menuTableList = FXCollections.observableArrayList();
 
-    public void fuckme(int fuck1, String fuck2) {
-        Cart Cart = new Cart(fuck1, fuck2);
+    // Function to add items to the shopping cart table that takes the amount of items and the type of menu items as parameters.
+    public void addToCartTable(int Amount, String Type) {
+        menuTableList.add(new Cart(Amount, Type));
     }
-    public void testfunc() {
-        menuItemAmount.setCellValueFactory(new PropertyValueFactory<Cart, Integer>("menuItemAmount"));
-        menuItemType.setCellValueFactory(new PropertyValueFactory<Cart, String>("menuItemType"));
 
-        fuckme(20,"test");
-        Cart Cart = new Cart(20, "String");
+    // Function to update the cart when switching to it.
+    public void testfunc() {
+        //menuItemAmount.setCellValueFactory(new PropertyValueFactory<Cart, Integer>("menuItemAmount"));
+        //menuItemType.setCellValueFactory(new PropertyValueFactory<Cart, String>("menuItemType"));
+
+        addToCartTable(20, "Value");
+
         cartTableView.setItems(menuTableList);
 
         cartTableView.refresh();

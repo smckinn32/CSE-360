@@ -9,14 +9,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -47,7 +45,7 @@ public class PipeLine {
 
 	// Creates FXML fields to be used in the password visibility function.
 	@FXML
-	private PasswordField passwordHidden;
+	private PasswordField password;
 
 	@FXML
 	private TextField passwordText;
@@ -274,14 +272,15 @@ public class PipeLine {
 	// Function to change visibility of password check-box.
 	@FXML
 	void changeVisibility(ActionEvent event) {
+		// Grabs the source, that being the selected button, and then puts it into a temporary button/
 		if (checkBox.isSelected()) {
-			passwordText.setText(passwordHidden.getText());
+			passwordText.setText(password.getText());
 			passwordText.setVisible(true);
-			passwordHidden.setVisible(false);
+			password.setVisible(false);
 			return;
 		}
-		passwordHidden.setText(passwordText.getText());
-		passwordHidden.setVisible(true);
+		password.setText(passwordText.getText());
+		password.setVisible(true);
 		passwordText.setVisible(false);
 	}
 
