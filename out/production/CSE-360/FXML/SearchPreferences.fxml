@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SearchPreferencesController">
+   <children>
+      <Pane prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Search%20Preferences.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="exitButton" />
+            <Button layoutX="1631.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="shoppingCartButton" />
+            <Button layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="35.0" text="settingsButton" />
+            <Button layoutX="200.0" layoutY="27.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="29.0" text="homeButton" />
+            <TextField fx:id="searchButton" layoutX="1357.0" layoutY="30.0" onAction="#search" onKeyPressed="#searchVisibility" prefHeight="25.0" prefWidth="135.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ListView fx:id="searchBox" layoutX="1325.0" layoutY="67.0" onMouseClicked="#searchFunction" prefHeight="135.0" prefWidth="170.0" visible="false" />
+            <Button layoutX="1503.0" layoutY="25.0" mnemonicParsing="false" onAction="#search" opacity="0.0" prefHeight="38.0" prefWidth="86.0" text="Search" />
+            <Button fx:id="YourAccountButton" layoutX="536.0" layoutY="232.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Your Account" />
+            <Button fx:id="YourOrdersButton" layoutX="536.0" layoutY="297.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Your Orders" />
+            <Button fx:id="SearchPreferencesButton" layoutX="542.0" layoutY="359.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Search Preferences" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
