@@ -185,6 +185,7 @@ public class ShoppingCartController extends PipeLine {
 
     // Function to add items to the shopping cart table that takes the amount of items and the type of menu items as parameters.
     public void addToCartTable(int Amount, String Type) {
+
         menuTableList.add(new Cart(Amount, Type));
     }
 

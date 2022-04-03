@@ -86,8 +86,8 @@ public class PipeLine {
 											"/FXML/Menu.fxml", "/FXML/OrderPlaced.fxml", "/FXML/SearchPreferences.fxml", "/FXML/ShoppingCart.fxml", "/FXML/YourOrders.fxml", 
 											 /*Default to login screen if error*/"/FXML/LoginScreen.fxml"  };
 	//If fxmlbutton gets new buttons/updated - make potential controller changes in changeScene
-	private static String[] fxmlbutton = {"settingsButton", "YourAccountButton", "createAccountButton", "searchBox", "SignIn", "homeButton", "Login", "orderPlacedButton", "searchPreferencesButton", 
-											"shoppingCartButton", "yourOrdersButton",  /*Default to login screen if error*/"" };
+	private static String[] fxmlbutton = {"settingsButton", "YourAccountButton", "createAccountButton", "searchBox", "SignIn", "homeButton", "Login", "orderPlacedButton", "SearchPreferencesButton",
+											"shoppingCartButton", "YourOrdersButton",  /*Default to login screen if error*/"" };
 	private static int totalID = fxmlscene.length;
 
 	
