@@ -9,13 +9,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -26,6 +27,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Control;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
@@ -43,7 +45,7 @@ public class PipeLine {
 
 	// Creates FXML fields to be used in the password visibility function.
 	@FXML
-	private PasswordField passwordHidden;
+	private PasswordField password;
 
 	@FXML
 	private TextField passwordText;
@@ -70,10 +72,6 @@ public class PipeLine {
 	@FXML
 	private Node MainNode;
 
-	// Creates the FXML List-view for the shopping cart functionality.
-	@FXML
-	public ListView<String> cartList;
-
 	/* ------------------------------ Menu Array List: ------------------------------ */
 	ArrayList <String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
 
@@ -81,147 +79,82 @@ public class PipeLine {
 	/*                                SCENE CHANGE FUNCTIONS:                     */
 	/* -------------------------------------------------------------------------- */
 
-	// Function to switch scene depending on the FX:ID of the button pressed.
-	public void changeScene (ActionEvent event) throws IOException {
+	//To be implemented and stored elsewhere - temporary accommodations for initial implementation
+	//Position in array should match the object ID and the fxml page to load for all pages
+	//Both fxmlscene and fxmlbutton should be the exact same size array
+	private static String[] fxmlscene = { "/FXML/AccountSettings.fxml", "/FXML/AccountSettings.fxml", "/FXML/CreateAccountScene.fxml", "/FXML/ItemPlaceholder.fxml",  "/FXML/LoginScreen.fxml", "/FXML/Menu.fxml", 
+											"/FXML/Menu.fxml", "/FXML/OrderPlaced.fxml", "/FXML/SearchPreferences.fxml", "/FXML/ShoppingCart.fxml", "/FXML/YourOrders.fxml", 
+											 /*Default to login screen if error*/"/FXML/LoginScreen.fxml"  };
+	//If fxmlbutton gets new buttons/updated - make potential controller changes in changeScene
+	private static String[] fxmlbutton = {"settingsButton", "YourAccountButton", "createAccountButton", "searchBox", "SignIn", "homeButton", "Login", "orderPlacedButton", "SearchPreferencesButton",
+											"shoppingCartButton", "YourOrdersButton",  /*Default to login screen if error*/"" };
+	private static int totalID = fxmlscene.length;
 
-			// Grabs the source, that being the selected button, and then puts it into a temporary button/
-			Button FXID = (Button) event.getSource();
-
-			// Switches to the login Screen Scene if the FXID matches the case.
-			switch (FXID.getId()) {
-				case "SignIn":
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/LoginScreen.fxml"));
-
-					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-					root = loader.load();
-
-					scene = new Scene(root);
-
-					stage.setScene(scene);
-
-					stage.show();
-
-					// Adds CSS styling to new scene
-					String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-					scene.getStylesheets().add(css);
-
-					// Breaks Switch statement.
-					break;
-				// Switches to the Menu Screen if the FX:ID matches
-				case "Login", "homeButton":
-
-					loader = new FXMLLoader(getClass().getResource("/FXML/Menu.fxml"));
-
-					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-					root = loader.load();
-
-					// Creates MenuController so that we can activate functions from it.
-					MenuController MenuController = loader.getController();
-
-					scene = new Scene(root);
-
-					stage.setScene(scene);
-
-					stage.show();
-
-					// Adds CSS styling to new scene
-					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-					scene.getStylesheets().add(css);
-
-					// Runs the updateMenuListView function present in the seperate controller.
-					MenuController.updateMenuListView();
-
-					// Breaks switch statement.
-					break;
-				case "shoppingCartButton":
-
-					loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
-
-					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-					root = loader.load();
-
-					scene = new Scene(root);
-
-					stage.setScene(scene);
-
-					stage.show();
-
-					// Adds CSS styling to new scene
-					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-					scene.getStylesheets().add(css);
-
-					// Breaks switch statement.
-					break;
-				case "settingsButton", "YourAccountButton":
-					loader = new FXMLLoader(getClass().getResource("/FXML/AccountSettings.fxml"));
-
-					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-					root = loader.load();
-
-					scene = new Scene(root);
-
-					stage.setScene(scene);
-
-					stage.show();
-
-					// Adds CSS styling to new scene
-					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-					scene.getStylesheets().add(css);
-
-					// Breaks switch statement.
-					break;
-				case "YourOrdersButton":
-					loader = new FXMLLoader(getClass().getResource("/FXML/YourOrders.fxml"));
-
-					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-					root = loader.load();
-
-					scene = new Scene(root);
-
-					stage.setScene(scene);
-
-					stage.show();
-
-					// Adds CSS styling to new scene
-					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-					scene.getStylesheets().add(css);
-
-					// Breaks switch statement.
-					break;
-				case "SearchPreferencesButton":
-					loader = new FXMLLoader(getClass().getResource("/FXML/SearchPreferences.fxml"));
-
-					stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-					root = loader.load();
-
-					scene = new Scene(root);
-
-					stage.setScene(scene);
-
-					stage.show();
-
-					// Adds CSS styling to new scene
-					css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-					scene.getStylesheets().add(css);
-
-					// Breaks switch statement.
-					break;
-
+	
+	/** This class will change the scene based on a list of predefined scenes in a String[] format
+	 * 
+	 * @param e The event & object that was interacted with
+	 * @throws IOException with un-handled errors
+	 */
+	public void changeScene(Event e) throws IOException{
+			FXMLLoader loader = null;
+			Parent root = null;
+			Control control = (Control) e.getSource();
+			Control updater = null;
+			String tempID = control.getId();
+			
+			//tempID = tempButton.getId();
+			int id = 0;
+			while(tempID.compareTo(fxmlbutton[id]) != 0 && id < totalID-1) {
+				id++;
 			}
-		}
+			
+			
+			//Set the loader
+			//Find the page ID to go to, based on the button name
+			if(fxmlbutton[id].compareTo("searchBox") == 0) {
+				String temp = searchBox.getSelectionModel().getSelectedItem();
+				loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
+			}
+			else
+				loader = new FXMLLoader(getClass().getResource(fxmlscene[id]));
+			
+
+			//Set & show scene
+			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+			
+			root = loader.load();
+			
+			
+			//Call secondary controllers functions
+			switch(fxmlbutton[id]) {
+			case "Login", "homeButton" :
+				MenuController MenuController = loader.getController();
+				MenuController.updateMenuListView();
+				break;
+			case "shoppingCartButton" :
+				ShoppingCartController ShoppingCartController = loader.getController();
+				ShoppingCartController.updateShoppingCart();
+				break;
+			}
+			
+			
+			scene = new Scene(root);
+
+			stage.setScene(scene);
+
+			stage.show();
+
+			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+			scene.getStylesheets().add(css);
+	}
 
 	/* ------------------------------------------------------------------------------------------------ */
 	/*                                FUNCTIONS USING MULTIPLE CONTROLLERS:                             */
 	/* ------------------------------------------------------------------------------------------------ */
 
 	// MULTIPLE CONTROLLER FUNCTIONALITY DEMONSTRATION FUNCTION:
-	public void addToShoppingCart(ActionEvent event) throws IOException {
+	public void addToShoppingCartButton(ActionEvent event) throws IOException {
 
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
 
@@ -242,8 +175,9 @@ public class PipeLine {
 		String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 		scene.getStylesheets().add(css);
 
-		// Runs the updateShoppingCart function present in the seperate controller.
+		// Runs the addToShoppingCart function present in the ShoppingCartcontroller to add a specific item to the shopping cart.
 		ShoppingCartController.addToShoppingCart("Test");
+		ShoppingCartController.updateShoppingCart();
 	}
 
 	/* -------------------------------------------------------------------------- */
@@ -292,6 +226,13 @@ public class PipeLine {
 			// Adds CSS styling to new scene
 			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 			scene.getStylesheets().add(css);
+
+			// Clears the contents of the cart when logging out.
+			try {
+				new FileWriter("TextFiles/cartContents.csv", false).close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -331,14 +272,15 @@ public class PipeLine {
 	// Function to change visibility of password check-box.
 	@FXML
 	void changeVisibility(ActionEvent event) {
+		// Grabs the source, that being the selected button, and then puts it into a temporary button/
 		if (checkBox.isSelected()) {
-			passwordText.setText(passwordHidden.getText());
+			passwordText.setText(password.getText());
 			passwordText.setVisible(true);
-			passwordHidden.setVisible(false);
+			password.setVisible(false);
 			return;
 		}
-		passwordHidden.setText(passwordText.getText());
-		passwordHidden.setVisible(true);
+		password.setText(passwordText.getText());
+		password.setVisible(true);
 		passwordText.setVisible(false);
 	}
 
@@ -348,7 +290,7 @@ public class PipeLine {
 		// Creates a string that holds the contents of the currently selected item from the pane view.
 		String selected = searchBox.getSelectionModel().getSelectedItem();
 
-		if (selected == "Alpha") {
+		if (selected == "Lasagna") {
 			Parent root = FXMLLoader.load(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
 
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

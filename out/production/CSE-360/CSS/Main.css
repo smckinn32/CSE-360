@@ -3,7 +3,7 @@
  * Date: 3/25/2022
  * Class: CSE360 Mon 3pm
  ************************************************************/
- 
+
 /* Imports custom font from file. */
 @font-face {
     src: url("/fonts/Acumin.ttf");
@@ -47,16 +47,17 @@
 .check-box:selected>.box>.mark {
   -fx-background-color: transparent;
   -fx-background-image: url("/images/EyeOn.png");
-} 	
+}
+
 
 /* Changes Table-view for the CheckoutCart to transparent so that it blends into the GUI. */
 #cartListView {
 	-fx-background-color: transparent;
   	//-fx-border-color: all-dialog-border-color;
-	-fx-border-width: 1;
-	-fx-table-header-border-color: transparent;
-	-fx-table-cell-border-color: transparent;
-	-fx-text-fill: white;
+	//-fx-border-width: 1;
+	//-fx-table-header-border-color: transparent;
+	//-fx-table-cell-border-color: transparent;
+	//-fx-text-fill: white;
 }
 .table-view .column-header-background .filler {
 	-fx-background-color: "#A6BCD0";
@@ -90,6 +91,11 @@
 	-fx-text-fill: white;
 }
 
+#cartTableView {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+
 .table-view .column-header,
 .table-view .column-header .filler,
 .table-view .column-header-background .filler {
@@ -109,19 +115,19 @@
 }
 
 .table-row-cell:selected {
-	-fx-background-color: lightgrey;
+	//-fx-background-color: lightgrey;
 }
 
 .table-view .table-cell {
-	-fx-border-color: lightgrey;
+	//-fx-border-color: lightgrey;
 }
 
 .table-row-cell:selected {
-   -fx-background-color: steelblue; 
+   //-fx-background-color: steelblue;
 }
 
 .table-row-cell:selected .text {
-       -fx-fill: purple ;
+       //-fx-fill: purple ;
 }
 
 /* Changes color of text in the tableview header */
@@ -131,31 +137,130 @@
 
 /* Changes color of search box */
 #searchBox {
-	//-fx-background-color: "#748A9D";
-	//-fx-background-color: "#A6BCD0";
-
+	-fx-border-color: "#A6BCD0";
+	-fx-background-color: white;
 }
 
-.list-view .list-cell:even {
-	-fx-background-color: "#748A9D";
-	-fx-text-fill: white;
-}
-.list-view .list-cell:odd {
-	-fx-background-color: "#748A9D";
-	-fx-text-fill: white;
+/* Centers the text on the search box and makes the background transparent View */
+#searchBox .list-cell {
+	//-fx-alignment: center;
+	-fx-background-color: transparent;
 }
 
 /* Centers the text on the Menu List View */
 #menuListView .list-cell {
 	-fx-alignment: center;
+	-fx-background-color: transparent;
+}
+
+/* Makes background of list view transparent */
+#cartListView .list-cell {
+	//-fx-background-color: transparent;
+	//-fx-background-color:"#748A9D";
+	-fx-font-size: 20pt ;
+}
+
+.list-view {
+	-fx-selection-bar: "#6200EE";
 }
 
 #menuListView {
 	-fx-background-color: transparent;
-//-fx-border-color: all-dialog-border-color;
 	-fx-border-width: 1;
 	-fx-table-header-border-color: transparent;
 	-fx-table-cell-border-color: transparent;
 	-fx-text-fill: white;
-	-fx-font-size: 20pt ;
+	-fx-font-size: 25pt ;
+	-fx-border-color: transparent;
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#AllSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#AllSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#veganSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#veganSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+
+/* Changes the checkbox images for the search preferences functionality */
+#vegetarianSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#vegetarianSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#paleoSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#paleoSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#ketoSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#ketoSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#lowcarbSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#lowcarbSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
 }

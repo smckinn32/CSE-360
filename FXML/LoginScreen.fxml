@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PipeLine">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginScreenController">
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>
@@ -19,14 +19,14 @@
                   <Image url="@../images/Login.png" />
                </image>
             </ImageView>
-            <TextField fx:id="fullnameEntry" layoutX="854.0" layoutY="426.0" prefHeight="57.0" prefWidth="264.0" promptText="Full Name">
+            <TextField fx:id="userName" layoutX="854.0" layoutY="426.0" prefHeight="57.0" prefWidth="264.0" promptText="Full Name">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
             <Button layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" />
-            <Button fx:id="Login" layoutX="795.0" layoutY="589.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="73.0" prefWidth="333.0" />
-            <PasswordField fx:id="passwordHidden" layoutX="854.0" layoutY="512.0" prefHeight="57.0" prefWidth="215.0" promptText="Password">
+            <Button fx:id="Login" layoutX="795.0" layoutY="589.0" mnemonicParsing="false" onAction="#isValidUser" opacity="0.0" prefHeight="73.0" prefWidth="333.0" />
+            <PasswordField fx:id="password" layoutX="854.0" layoutY="512.0" prefHeight="57.0" prefWidth="215.0" promptText="Password">
                <font>
                   <Font size="14.0" />
                </font></PasswordField>

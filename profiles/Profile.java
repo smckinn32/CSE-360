@@ -142,7 +142,7 @@ public abstract class Profile {
     */
     public String[] getUserData(String userName, String passWord) {
         String line = "";
-        String[] user = new String[7];
+        String[] user;
         boolean found = false;
         try {
             BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
@@ -175,5 +175,26 @@ public abstract class Profile {
         } catch (IOException e) {
             return;
         }
+    }
+
+    // search the Users.csv file and return true if the user
+    // exist, otherwise returns false
+    public boolean isUserExist(String userName){
+        String line = "";
+        String[] user;
+        boolean found = false;
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            while((line = br.readLine()) != null && !found){
+                user = line.split(";");
+                if(user[0].equals(userName))
+                    return true;
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }

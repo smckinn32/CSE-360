@@ -19,7 +19,7 @@
                   <Image url="@../images/CreateAcc.png" />
                </image>
             </ImageView>
-            <TextField fx:id="fullnameEntry" layoutX="854.0" layoutY="426.0" prefHeight="57.0" prefWidth="264.0" promptText="Username">
+            <TextField fx:id="userName" layoutX="854.0" layoutY="426.0" prefHeight="57.0" prefWidth="264.0" promptText="Username">
                <font>
                   <Font size="14.0" />
                </font>
@@ -33,11 +33,11 @@
             <Button fx:id="createAccount" layoutX="794.0" layoutY="683.0" mnemonicParsing="false" opacity="0.0" prefHeight="73.0" prefWidth="333.0" />
             <Button fx:id="SignIn" layoutX="917.0" layoutY="674.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="34.0" prefWidth="88.0" />
             <CheckBox fx:id="checkBox" layoutX="1042.0" layoutY="495.0" mnemonicParsing="false" onAction="#changeVisibility" />
-            <PasswordField fx:id="passwordHidden" layoutX="854.0" layoutY="512.0" prefHeight="57.0" prefWidth="216.0" promptText="Password">
+            <PasswordField fx:id="password" layoutX="854.0" layoutY="512.0" prefHeight="57.0" prefWidth="216.0" promptText="Password">
                <font>
                   <Font size="14.0" />
                </font></PasswordField>
-            <Button fx:id="existingaccButton" layoutX="802.0" layoutY="591.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="73.0" prefWidth="316.0" text="CreateAccount" />
+            <Button fx:id="SignIn" layoutX="794.0" layoutY="590.0" mnemonicParsing="false" onAction="#createNewAccount" opacity="0.0" prefHeight="73.0" prefWidth="316.0" text="CreateAccount" />
          </children>
       </Pane>
    </children>
