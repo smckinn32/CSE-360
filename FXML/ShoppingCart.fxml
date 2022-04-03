@@ -34,22 +34,22 @@
             <ListView fx:id="cartListView" layoutX="416.0" layoutY="179.0" prefHeight="565.0" prefWidth="515.0" />
             <Button fx:id="removeFromCart" layoutX="416.0" layoutY="767.0" mnemonicParsing="false" onMouseClicked="#removeCart" opacity="0.0" prefHeight="58.0" prefWidth="247.0" text="RemoveFromCart" />
             <Button fx:id="clearCart" layoutX="684.0" layoutY="764.0" mnemonicParsing="false" opacity="0.0" prefHeight="64.0" prefWidth="247.0" text="ClearCart" />
-            <TextField fx:id="myTextField4" layoutX="1060.0" layoutY="181.0" prefHeight="58.0" prefWidth="441.0" promptText="Cardholder Name">
+            <TextField fx:id="cardNameField" layoutX="1060.0" layoutY="181.0" prefHeight="58.0" prefWidth="441.0" promptText="Cardholder Name">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="myTextField" layoutX="1060.0" layoutY="256.0" prefHeight="58.0" prefWidth="441.0" promptText="Card Number">
+            <TextField fx:id="cardNumField" layoutX="1060.0" layoutY="256.0" prefHeight="58.0" prefWidth="441.0" promptText="Card Number">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="myTextField2" layoutX="1060.0" layoutY="330.0" prefHeight="58.0" prefWidth="178.0" promptText="Expiration Date">
+            <TextField fx:id="cardDateField" layoutX="1060.0" layoutY="330.0" prefHeight="58.0" prefWidth="178.0" promptText="Expiration Date">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="myTextField3" layoutX="1321.0" layoutY="330.0" prefHeight="58.0" prefWidth="184.0" promptText="Security Code">
+            <TextField fx:id="cardCvvField" layoutX="1321.0" layoutY="330.0" prefHeight="58.0" prefWidth="184.0" promptText="Security Code">
                <font>
                   <Font size="14.0" />
                </font>
@@ -60,6 +60,11 @@
                </font>
             </TextField>
             <Label fx:id="myLabel" layoutX="584.0" layoutY="122.0" prefHeight="38.0" prefWidth="201.0" />
+            <Label fx:id="cardError" layoutX="1140.0" layoutY="131.0" prefHeight="17.0" prefWidth="317.0" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
