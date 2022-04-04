@@ -3,6 +3,7 @@
 package profiles;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public abstract class Profile {
     private static final int USERATTRIBUTES = 7;
@@ -143,12 +144,13 @@ public abstract class Profile {
     public String[] getUserData(String userName, String passWord) {
         String line = "";
         String[] user;
-        boolean found = false;
+
         try {
             BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
-            while ((line = br.readLine()) != null && !found) {
+            while ((line = br.readLine()) != null) {
                 user = line.split(";");
                 if (user[0].equals(userName) && user[1].equals(passWord)) {
+                    br.close();
                     return user;
                 }
             }
@@ -172,6 +174,7 @@ public abstract class Profile {
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(line);
             bw.close();
+            fw.close();
         } catch (IOException e) {
             return;
         }
@@ -187,8 +190,10 @@ public abstract class Profile {
             BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
             while((line = br.readLine()) != null && !found){
                 user = line.split(";");
-                if(user[0].equals(userName))
+                if(user[0].equals(userName)){
+                    br.close();
                     return true;
+                }
             }
         }
         catch (IOException e) {
@@ -197,4 +202,66 @@ public abstract class Profile {
 
         return false;
     }
+
+    // this method updates/replaces the user information with a new one
+    public void editUserData(String fName, String lName, String addr, String number){
+        firstName = fName;
+        lastName = lName;
+        address = addr;
+        phoneNum = number;
+
+        String dataLine = uName + ";" + pwd + ";" + firstName + ";" + lastName
+                + ";" + address + ";" + phoneNum + ";" + isAdmin + "\n";
+
+        String[] user;
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            StringBuilder inBuffer = new StringBuilder();
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                user = line.split(";");
+                if(user[0].equals(uName) && user[1].equals(pwd)) {
+                    line = dataLine;
+                }
+                inBuffer.append(line);
+                inBuffer.append('\n');
+            }
+            br.close();
+
+            FileOutputStream fileOut = new FileOutputStream(DATA_FILE);
+            fileOut.write(inBuffer.toString().getBytes());
+            fileOut.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountSettingsController">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountSettingsController">
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>
@@ -42,7 +42,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="Address" layoutX="931.0" layoutY="345.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
+            <TextField fx:id="address" layoutX="931.0" layoutY="345.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
                <font>
                   <Font size="14.0" />
                </font>
