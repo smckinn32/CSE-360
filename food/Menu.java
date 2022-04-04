@@ -5,39 +5,35 @@ import java.io.*;
 
 public class Menu {
 
-  ArrayList<Dish> menu = new ArrayList<Dish>();
-  static final String menuFile = "Menu.txt";
+  public ArrayList<Dish> menu = new ArrayList<Dish>();
+  static final String menuFile = "food/Menu.txt";
   /* Builds the menu ArrayList by parsing through a text file.*/
   public void buildMenu(){
-    String ingredients, tags;
+    String ingredients, tags, dName;
     String[] ingredientList, tagList;
     int numDishes, timeToMake;
     double price;
-    String dName;
-    
-    Scanner scan = null;
+
+	 	Scanner scan = null;
     try {
       scan = new Scanner(new FileInputStream(menuFile));
-      numDishes = Integer.parseInt(scan.nextLine());
-      scan.useDelimiter("|");
+			scan.nextLine();
 
-      while(numDishes != 0){
-        dName = scan.next();
-        price = Double.parseDouble(scan.next());
-        timeToMake = Integer.parseInt(scan.next());
-        ingredients = scan.next();
-        tags = scan.next();
+      while(scan.hasNext()){
+				String[] cLine = scan.nextLine().split(":", 5);
+				dName = cLine[0];
+        price = Double.parseDouble(cLine[1]);
+        timeToMake = Integer.parseInt(cLine[2]);
+        ingredients = cLine[3];
+        tags = cLine[4];
 
         ingredientList = ingredients.split(",", 10);
         tagList = tags.split(",", 5);
 
         Dish newDish = new Dish(ingredientList, tagList, dName, price, timeToMake);
         menu.add(newDish);
-
-        numDishes--;
       }
     } catch(IOException e) {}
-    scan.close();
   }
 
   /*  Searches the menu for all dishes that contain the specified tags.
@@ -46,20 +42,20 @@ public class Menu {
   public LinkedList<Dish> searchByTag(String[] searchTags){
     LinkedList<Dish> foundDishes = new LinkedList<Dish>();
     String[] dishTags = null;
-    int counter = menu.size() - 1;
+    //int counter = menu.size() - 1;
 
-    while(counter >= 0){
-      Dish currentDish = menu.get(counter);
+    for(int c=0; c<menu.size(); c++){
+      Dish currentDish = menu.get(c); //System.out.printf(">Now checking %s...\n", currentDish.getDishName());
       dishTags = currentDish.getTags();
 
-      for(int x = 0; x < searchTags.length; x++){
-        for(int y = 0; y < dishTags.length; y++){
-          if(dishTags[y].compareToIgnoreCase(searchTags[x]) == 0){
-            foundDishes.add(currentDish);
+      for(int x = 0; x < dishTags.length; x++){
+        for(int y = 0; y < searchTags.length; y++){ //System.out.printf(">>Now comparing %s & %s\n", dishTags[x], searchTags[y]);
+          if(dishTags[x].equalsIgnoreCase(searchTags[y])){
+            foundDishes.add(currentDish); //System.out.println(">>> Match Found!");
           }
         }
       }
-      counter--;
+      //counter--;
     }
     return foundDishes;
   }
@@ -67,38 +63,35 @@ public class Menu {
   /*  Adds an item to the end of the menu text file & then updates the menu List*/
   public void addMenuItem(String dName, Double price, Integer timeTM, String[] ing, String[] tags){
     try {
-    	 BufferedWriter bw = new BufferedWriter(new FileWriter(menuFile, true));
-    
-	    dName += "|";
-	    String priceStr = String.valueOf(price) + "|";
-	    String timeTMStr = String.valueOf(timeTM) + "|";
-	
-	    
-	    bw.newLine();
+    	BufferedWriter bw = new BufferedWriter(new FileWriter(menuFile, true));
+
+	    dName += ":";
+	    String priceStr = String.valueOf(price) + ":";
+	    String timeTMStr = String.valueOf(timeTM) + ":";
+
 	    bw.write(dName);
 	    bw.write(priceStr);
 	    bw.write(timeTMStr);
-	
+
 	    for(int i=0; i<ing.length; i++){
 	      String ingSeperate = ing[i];
-	
+
 	      if(i == (ing.length-1))
-	        {ingSeperate += "|";}
+	        {ingSeperate += ":";}
 	      else
 	        {ingSeperate += ",";}
 	      bw.write(ingSeperate);
 	    }
-	
+
 	    for(int j=0; j<tags.length; j++){
 	      String tagsSeperate = tags[j];
-	
+
 	      if(j == (tags.length-1))
-	        {tagsSeperate += "|";}
+	        {tagsSeperate += ":";}
 	      else
 	        {tagsSeperate += ",";}
 	      bw.write(tagsSeperate);
 	    }
-	
 	    bw.close();
     } catch (IOException e){}
     //Finished writing to file, now update the menu array list object with the new dish.
@@ -114,7 +107,7 @@ public class Menu {
     LinkedList<Dish> foundDishes = new LinkedList<Dish>();
 
     for(int i = 0; i < menu.size(); i++){
-      if(menu.get(i).getDishName().compareToIgnoreCase(searchTerm) == 0){
+      if(menu.get(i).getDishName().equalsIgnoreCase(searchTerm)){
         foundDishes.add(menu.get(i));
       }
     }
@@ -124,21 +117,21 @@ public class Menu {
   /*  Searches the menu for any items containing specified ingredients*/
   public LinkedList<Dish> searchByIngredients(String[] wantedI){
     LinkedList<Dish> foundDishes = new LinkedList<Dish>();
-    int counter = menu.size() -1;
+    //int counter = menu.size() -1;
     String[] dishI = null;
 
-    while(counter >=0){
-      Dish currentDish = menu.get(counter);
+    for(int c=0; c<menu.size(); c++){
+      Dish currentDish = menu.get(c);
       dishI = currentDish.getIngredients();
 
       for(int x = 0; x < wantedI.length; x++){
         for(int y = 0; y < dishI.length; y++){
-          if(dishI[y].compareToIgnoreCase(wantedI[x]) == 0){
+          if(dishI[y].equalsIgnoreCase(wantedI[x])){
             foundDishes.add(currentDish);
           }
         }
       }
-      counter--;
+      //counter--;
     }
     return foundDishes;
   }
