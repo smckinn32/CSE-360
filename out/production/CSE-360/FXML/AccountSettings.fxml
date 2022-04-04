@@ -14,11 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
 <AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountSettingsController">
-=======
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.YourAccountController">
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>
@@ -46,11 +42,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-<<<<<<< HEAD
             <TextField fx:id="address" layoutX="931.0" layoutY="345.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
-=======
-            <TextField fx:id="Address" layoutX="931.0" layoutY="345.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
                <font>
                   <Font size="14.0" />
                </font>
@@ -60,11 +52,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-<<<<<<< HEAD
-            <PasswordField fx:id="passwordHidden" layoutX="931.0" layoutY="471.0" prefHeight="30.0" prefWidth="403.0">
-=======
             <PasswordField fx:id="password" layoutX="931.0" layoutY="471.0" prefHeight="30.0" prefWidth="403.0">
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
                <font>
                   <Font size="14.0" />
                </font>

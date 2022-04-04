@@ -8,10 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
-<<<<<<< HEAD
-    <orderEntry type="library" name="JavaFX" level="project" />
-=======
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
   </component>
 </module>

@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 package food;
 
-=======
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
 import java.util.Scanner;
 import java.util.LinkedList;
 import java.util.Arrays;
