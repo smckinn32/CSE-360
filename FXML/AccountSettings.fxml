@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
+
 <AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountSettingsController">
-=======
+
 <AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.YourAccountController">
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>

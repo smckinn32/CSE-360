@@ -26,7 +26,7 @@ public class LoginScreenController extends PipeLine {
 
     // TODO: add an if statement to check if user is an Admin
     public void isValidUser(ActionEvent event) throws IOException {
-<<<<<<< HEAD
+
         if(user.getUserData(userName.getText(), password.getText()) != null) {
             user.setUserName(userName.getText());
             user.setPassWord(password.getText());
@@ -36,12 +36,12 @@ public class LoginScreenController extends PipeLine {
         }
         else
             System.out.println("User does not exist!");
-=======
+
         //if(user.getUserData(userName.getText(), password.getText()) != null)
             changeScene(event);
         /*else
             System.out.println("User does not exist!");*/
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
     }
 
 

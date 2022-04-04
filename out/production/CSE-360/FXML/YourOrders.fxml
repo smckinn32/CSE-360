@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<<<<<<< HEAD
-=======
+
+
 <?import javafx.scene.control.Label?>
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,21 +15,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
+
 <?import javafx.scene.control.Label?>
-=======
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
+
 <AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OrdersController">
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>
             <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
                <image>
-<<<<<<< HEAD
+
                   <Image url="@../images/OrderHistory.png" />
-=======
+
                   <Image url="@../images/OrderHistoryAlt2.png" />
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
                </image>
             </ImageView>
             <Button fx:id="exitButton" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
@@ -46,15 +46,15 @@
             <Button fx:id="YourAccountButton" layoutX="536.0" layoutY="232.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Your Account" />
             <Button fx:id="YourOrdersButton" layoutX="536.0" layoutY="297.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Your Orders" />
             <Button fx:id="SearchPreferencesButton" layoutX="535.0" layoutY="359.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Search Preferences" />
-<<<<<<< HEAD
+
             <TableView fx:id="orderHistory" layoutX="901.0" layoutY="229.0" prefHeight="535.0" prefWidth="479.0">
                <placeholder>
                   <Label text=""/>
-=======
+
             <TableView fx:id="orderHistory" layoutX="901.0" layoutY="229.0" prefHeight="454.0" prefWidth="479.0">
                <placeholder>
                   <Label text="" />
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
                </placeholder>
                <columns>
                 <TableColumn prefWidth="123.0" text="Order Number:" />
@@ -63,10 +63,10 @@
                   <TableColumn prefWidth="185.0" text="Contents of Order " />
               </columns>
             </TableView>
-<<<<<<< HEAD
-=======
+
+
             <Button fx:id="cancelOrderButton" layoutX="912.0" layoutY="694.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="456.0" text="cancelOrderButton" visible="false" />
->>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
+
          </children>
       </Pane>
    </children>
