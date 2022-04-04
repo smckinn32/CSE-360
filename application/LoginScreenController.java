@@ -22,6 +22,11 @@ public class LoginScreenController extends PipeLine {
     @FXML
     private TextField password;
 
+    // Creates the primary stage, scene, and root.
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
     CommonU user = new CommonU();
 
     // TODO: add an if statement to check if user is an Admin
