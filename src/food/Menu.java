@@ -6,6 +6,7 @@ import java.io.*;
 public class Menu {
 
   public ArrayList<Dish> menu = new ArrayList<Dish>();
+  public ArrayList<String> dishTitles = new ArrayList();
   static final String menuFile = "food/Menu.txt";
   /* Builds the menu ArrayList by parsing through a text file.*/
   public void buildMenu(){
@@ -117,7 +118,7 @@ public class Menu {
   /*  Searches the menu for any items containing specified ingredients*/
   public LinkedList<Dish> searchByIngredients(String[] wantedI){
     LinkedList<Dish> foundDishes = new LinkedList<Dish>();
-    //int counter = menu.size() -1;
+
     String[] dishI = null;
 
     for(int c=0; c<menu.size(); c++){
@@ -131,8 +132,30 @@ public class Menu {
           }
         }
       }
-      //counter--;
     }
     return foundDishes;
   }
+
+  public String searchByTitle(String srch){
+    String foundDish = null;
+
+    for(int i = 0; i < menu.size(); i++){
+      if(menu.get(i).getDishName().equalsIgnoreCase(srch)){
+        foundDish = dishTitles[i];
+      }
+    }
+    return foundDishes;
+  }
+
+  public static ArrayList<String> getDishTitle(){
+    dishTitles.clear();
+
+    for(int i=0; i<menu.size(); i++){
+      if(menu.get(i).getDishName().contains(' ')){
+        String tempTitle = menu.get(i).getDishName().replace(" ", "");}
+      dishTitles.add(tempTitle);
+    }
+
+  }
+
 }
