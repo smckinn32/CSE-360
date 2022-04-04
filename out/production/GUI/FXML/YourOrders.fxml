@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.Label?>
 <AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OrdersController">
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
@@ -35,7 +36,10 @@
             <Button fx:id="YourOrdersButton" layoutX="536.0" layoutY="297.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Your Orders" />
             <Button fx:id="SearchPreferencesButton" layoutX="535.0" layoutY="359.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Search Preferences" />
             <TableView fx:id="orderHistory" layoutX="901.0" layoutY="229.0" prefHeight="535.0" prefWidth="479.0">
-              <columns>
+               <placeholder>
+                  <Label text=""/>
+               </placeholder>
+               <columns>
                 <TableColumn prefWidth="123.0" text="Order Number:" />
                 <TableColumn prefWidth="83.0" text="ETA:" />
                   <TableColumn prefWidth="87.0" text="Place in line:" />

@@ -1,2 +1,0 @@
-1
-Dish Name|price|timeToMake|ingredients, separated by commas, no more than 10 items|tags for dish, separated by commas, no more than 5 tags|

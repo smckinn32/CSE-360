@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 1
 Dish Name|price|timeToMake|ingredients, separated by commas, no more than 10 items|tags for dish, separated by commas, no more than 5 tags|
+=======
+Dish Name:price:timeToMake:ingredients, separated by commas, no more than 10 items:tags for dish, separated by commas, no more than 5 tags:
+French Fries:7.99:5:potato,salt:All,Vegan,Vegetarian
+Buffalo Wings:15.15:10:chicken:All,Low Carb,Keto,Paleo
+Spaghetti:20.00:10:flour,egg,tomato:All
+Lasagna:14.55:15:flour,egg,tomato,cheese:All,Vegetarian
+Chicken Marsala:25.72:20:mushrooms, wine sauce, chicken, cheese, tomato:All,Keto,Paleo
+>>>>>>> 7eea64c7eb8b1689ab660f68e0d19f7b30c3291a
