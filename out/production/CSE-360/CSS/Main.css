@@ -4,6 +4,13 @@
  * Class: CSE360 Mon 3pm
  ************************************************************/
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 /* Imports custom font from file. */
 @font-face {
     src: url("/fonts/Acumin.ttf");
@@ -47,7 +54,15 @@
 .check-box:selected>.box>.mark {
   -fx-background-color: transparent;
   -fx-background-image: url("/images/EyeOn.png");
+<<<<<<< HEAD
 }
+=======
+
+}
+
+}
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 
 
 /* Changes Table-view for the CheckoutCart to transparent so that it blends into the GUI. */
@@ -91,11 +106,20 @@
 	-fx-text-fill: white;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 #cartTableView {
 	-fx-background-color: transparent;
 	-fx-text-fill: white;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 .table-view .column-header,
 .table-view .column-header .filler,
 .table-view .column-header-background .filler {
@@ -143,7 +167,15 @@
 
 /* Centers the text on the search box and makes the background transparent View */
 #searchBox .list-cell {
+<<<<<<< HEAD
 	//-fx-alignment: center;
+=======
+
+	-fx-alignment: center;
+
+	//-fx-alignment: center;
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 	-fx-background-color: transparent;
 }
 
@@ -175,6 +207,12 @@
 }
 
 /* Changes the checkbox images for the search preferences functionality */
+<<<<<<< HEAD
+=======
+
+#testBox >.box>.mark {
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 #AllSwitch >.box>.mark {
 	-fx-background-image: url("/images/switch-off.png");
 	-fx-background-position: center;
@@ -237,6 +275,10 @@
 
 /* Changes the checkbox images for the search preferences functionality */
 #ketoSwitch >.box>.mark {
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 	-fx-background-image: url("/images/switch-off.png");
 	-fx-background-position: center;
 	-fx-background-repeat: stretch;
@@ -245,6 +287,15 @@
 }
 
 /* Changes checked state to custom image. */
+<<<<<<< HEAD
+=======
+
+#testBox:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
 #ketoSwitch:selected>.box>.mark {
 	-fx-background-color: transparent;
 	-fx-background-image: url("/images/switch-on.png");
@@ -263,4 +314,8 @@
 #lowcarbSwitch:selected>.box>.mark {
 	-fx-background-color: transparent;
 	-fx-background-image: url("/images/switch-on.png");
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
