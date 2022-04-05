@@ -21,18 +21,20 @@ import javax.imageio.IIOParam;
 public class AccountSettingsController extends PipeLine {
 
     @FXML
-    private TextField fullName;
+    private TextField firstName;
+    @FXML
+    private TextField lastName;
     @FXML
     private TextField address;
     @FXML
-    private TextField Email;
-    @FXML
-    private TextField passwordHidden;
+    private TextField phoneNumber;
 
     UserHolder holder = UserHolder.getUserInstance();
     CommonU user = holder.getUser();
 
     public void acceptChanges(Event e){
-        user.editUserData(fullName.getText(),address.getText(), Email.getText(), passwordHidden.getText());
+        // UNCOMMENT THIS IF STATEMENT IF YOU WANT THE USER TO NOT BE ABLE TO CHANGE INFORMATION
+        //        if (user.getFirstName().equals("") && user.getLastName().equals(""))
+        user.editUserData(firstName.getText(),lastName.getText(), address.getText(), phoneNumber.getText());
     }
 }

@@ -1,4 +1,5 @@
 package food;
+
 import java.util.Scanner;
 import java.util.LinkedList;
 import java.util.Arrays;

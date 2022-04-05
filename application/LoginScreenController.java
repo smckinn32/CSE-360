@@ -42,11 +42,6 @@ public class LoginScreenController extends PipeLine {
         else
             System.out.println("User does not exist!");
 
-        //if(user.getUserData(userName.getText(), password.getText()) != null)
-            changeScene(event);
-        /*else
-            System.out.println("User does not exist!");*/
-
     }
 
 

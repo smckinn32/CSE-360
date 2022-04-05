@@ -20,17 +20,14 @@ public class CreateAccountController extends PipeLine {
     CommonU user = new CommonU();
 
 
-
     public void createNewAccount(ActionEvent event) throws IOException {
-
-        // TODO: this if statement should have a warning in the GUI That the user already exist
-        /*if (user.isUserExist(userName.getText()))
+        if (user.isUserExist(userName.getText()))
             System.out.println("User Already exist!");
 
         else {
             CommonU newUser = new CommonU(userName.getText(), password.getText());
-            newUser.sendUserData();*/
+            newUser.sendUserData();
             changeScene(event);
-        //}
+        }
     }
 }
