@@ -4,6 +4,7 @@
  * Class: CSE360 Mon 3pm
  ************************************************************/
 package application;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,9 +12,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -30,9 +33,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class PipeLine {
+
+public class PipeLine extends Main {
 
 	/* -------------------------------------------------------------------------- */
 	/*                                DECLARATIONS:                               */
@@ -56,9 +61,6 @@ public class PipeLine {
 	// Creates FXML buttons and pane to be able to create exit confirmation button.
 	@FXML
 	private Button exitButton;
-
-	@FXML
-	private AnchorPane scenePane;
 
 	// Creates FXML text-field for the search button
 	@FXML
@@ -320,5 +322,55 @@ public class PipeLine {
 
 			scene.getStylesheets().add(css);
 		}
+	}
+	@FXML
+	Pane AccountCreationPane2;
+	public void fuckmyass() {
+		try {
+			AccountCreationPane2 = FXMLLoader.load(getClass().getResource("/FXML/AccountSettings.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML
+	public void changeTest(ActionEvent event) {
+		Button btn = (Button) event.getSource();
+		String id = btn.getId();
+
+		switch (id) {
+			case "homeButton":
+				//MainPane.getChildren().clear();
+				//MainPane.getChildren().add(AccountCreationPane);
+
+				String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+
+				scene.getStylesheets().add(css);
+				break;
+			case "shoppingCartButton":
+
+				break;
+			case "settingsButton":
+
+
+				break;
+			case "YourAccountButton":
+
+				break;
+			case "YourOrdersButton":
+
+				break;
+			case "SearchPreferencesButton":
+
+				break;
+
+			case "Login":
+
+				break;
+
+			case "SignIn":
+
+				break;
+		}
+
 	}
 }

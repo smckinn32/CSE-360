@@ -6,7 +6,11 @@
 package application;
 import  javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,8 +22,10 @@ import javafx.scene.control.Alert.AlertType;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Main extends Application {
+public class Main extends Application implements Initializable {
 	@Override
 	public void start(Stage stage) throws IOException {
 
@@ -96,5 +102,24 @@ public class Main extends Application {
 		launch(args);
 
 	}
+	@FXML
+	Pane MainPane;
+	Pane AccountCreationPane;
+	Pane LoginPane;
+	Pane AccountSettings;
+	Pane Menu;
+	Pane OrderPlaced;
+	Pane SearchPreferences;
+	Pane ShoppingCart;
+	Pane YourOrders;
 
+	@Override
+	public void initialize(URL url, ResourceBundle resourceBundle) {
+		//LoginPane = FXMLLoader.load(getClass().getResource("/FXML/LoginScreen.fxml"));
+
+
+		MainPane = new StackPane();
+
+
+	}
 }
