@@ -1,5 +1,5 @@
 /************************************************************
- * Author: Aften Elliott
+ * Author: Aften Elliott, Emerson Carter.
  * Date: 3/25/2022
  * Class: CSE360 Mon 3pm
  ************************************************************/
@@ -178,6 +178,21 @@ public class PipeLine extends Main {
 		ShoppingCartController.updateShoppingCart();
 	}
 
+	// Function to change visibility of a password check-box.
+	@FXML
+	void changeVisibility(ActionEvent event) {
+		// Grabs the source, that being the selected button, and then puts it into a temporary button/
+		if (checkBox.isSelected()) {
+			passwordText.setText(password.getText());
+			passwordText.setVisible(true);
+			password.setVisible(false);
+			return;
+		}
+		password.setText(passwordText.getText());
+		password.setVisible(true);
+		passwordText.setVisible(false);
+	}
+
 	/* -------------------------------------------------------------------------- */
 	/*                                LOGOUT FUNCTION                             */
 	/* -------------------------------------------------------------------------- */
@@ -267,18 +282,4 @@ public class PipeLine extends Main {
 		}
 	}
 
-	// Function to change visibility of password check-box.
-	@FXML
-	void changeVisibility(ActionEvent event) {
-		// Grabs the source, that being the selected button, and then puts it into a temporary button/
-		if (checkBox.isSelected()) {
-			passwordText.setText(password.getText());
-			passwordText.setVisible(true);
-			password.setVisible(false);
-			return;
-		}
-		password.setText(passwordText.getText());
-		password.setVisible(true);
-		passwordText.setVisible(false);
-	}
 }
