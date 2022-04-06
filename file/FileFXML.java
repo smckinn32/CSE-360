@@ -38,7 +38,7 @@ public class FileFXML {
 			+ "                  <Font size=\"14.0\" />\r\n"
 			+ "               </font>\r\n"
 			+ "            </TextField>\r\n"
-			+ "            <ListView fx:id=\"searchBox\" layoutX=\"1325.0\" layoutY=\"67.0\" onMouseClicked=\"#searchFunction\" prefHeight=\"135.0\" prefWidth=\"170.0\" visible=\"false\" />\r\n"
+			+ "            <ListView fx:id=\"searchBox\" layoutX=\"1325.0\" layoutY=\"67.0\" onMouseClicked=\"#changeScene\" prefHeight=\"135.0\" prefWidth=\"170.0\" visible=\"false\" />\r\n"
 			+ "            <Button layoutX=\"1503.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" onAction=\"#search\" opacity=\"0.0\" prefHeight=\"38.0\" prefWidth=\"86.0\" text=\"Search Button\" />\r\n"
 			+ "            <Button layoutX=\"297.0\" layoutY=\"906.0\" mnemonicParsing=\"false\" opacity=\"0.0\" prefHeight=\"72.0\" prefWidth=\"316.0\" text=\"Exit Button\" />\r\n"
 			+ "         </children>\r\n"

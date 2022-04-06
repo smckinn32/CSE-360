@@ -115,6 +115,8 @@ public class PipeLine extends Main {
 			//Set the loader
 			//Find the page ID to go to, based on the button name
 			if(fxmlbutton[id].compareTo("searchBox") == 0) {
+				
+				//Gets the item selected from the search box
 				String temp = searchBox.getSelectionModel().getSelectedItem();
 				loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
 				//loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
@@ -287,43 +289,6 @@ public class PipeLine extends Main {
 		passwordText.setVisible(false);
 	}
 
-	// Checks if the currently selected search item matches the String, if it does it moves to that given scene.
-	public void searchFunction(MouseEvent event) throws IOException {
-
-		// Creates a string that holds the contents of the currently selected item from the pane view.
-		String selected = searchBox.getSelectionModel().getSelectedItem();
-
-		if (selected == "Lasagna") {
-			Parent root = FXMLLoader.load(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
-
-			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-			scene = new Scene(root);
-
-			stage.setScene(scene);
-
-			stage.show();
-
-			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-
-			scene.getStylesheets().add(css);
-
-		} else if (selected == "Beta") {
-			Parent root = FXMLLoader.load(getClass().getResource("/FXML/CreateAccountScene.fxml"));
-
-			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-			scene = new Scene(root);
-
-			stage.setScene(scene);
-
-			stage.show();
-
-			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-
-			scene.getStylesheets().add(css);
-		}
-	}
 	@FXML
 	Pane AccountCreationPane2;
 	public void fuckmyass() {
