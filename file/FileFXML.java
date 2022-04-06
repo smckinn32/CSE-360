@@ -7,7 +7,7 @@ public class FileFXML {
 	
 	public FileFXML(String imageLocation)
 	{
-		imgLocale = "/images/Web%201920%20–%205.png";
+		imgLocale = "/images/Web%201920_5.png";
 		dishFXML = 
 			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n"
 			+ "\r\n"
@@ -26,13 +26,13 @@ public class FileFXML {
 			+ "         <children>\r\n"
 			+ "            <ImageView fitHeight=\"1080.0\" fitWidth=\"1920.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n"
 			+ "               <image>\r\n"
-			+ "                  <Image url=\"@.." + imgLocale + "\" />\r\n"
+			+ "                  <Image url=\"@../images/Web%201920_5.png\" />\r\n"
 			+ "               </image>\r\n"
 			+ "            </ImageView>\r\n"
-			+ "            <Button layoutX=\"90.0\" layoutY=\"20.0\" mnemonicParsing=\"false\" onAction=\"#logoutFunction\" opacity=\"0.0\" prefHeight=\"47.0\" prefWidth=\"62.0\" text=\"Exit Button\" />\r\n"
-			+ "            <Button layoutX=\"1627.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" onAction=\"#changeScene\" opacity=\"0.0\" prefHeight=\"38.0\" prefWidth=\"40.0\" text=\"Shopping Cart Button\" />\r\n"
-			+ "            <Button layoutX=\"1716.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" onAction=\"#changeScene\" opacity=\"0.0\" prefHeight=\"38.0\" prefWidth=\"40.0\" text=\"Settings Button\" />\r\n"
-			+ "            <Button layoutX=\"185.0\" layoutY=\"20.0\" mnemonicParsing=\"false\" onAction=\"#changeScene\" opacity=\"0.0\" prefHeight=\"55.0\" prefWidth=\"54.0\" text=\"Home Button\" />\r\n"
+			+ "            <Button fx:id=\"exitButton\" layoutX=\"90.0\" layoutY=\"20.0\" mnemonicParsing=\"false\" onAction=\"#logoutFunction\" opacity=\"0.0\" prefHeight=\"47.0\" prefWidth=\"62.0\" text=\"Exit Button\" />\r\n"
+			+ "            <Button fx:id=\"shoppingCartButton\" layoutX=\"1627.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" onAction=\"#changeScene\" opacity=\"0.0\" prefHeight=\"38.0\" prefWidth=\"40.0\" text=\"Shopping Cart Button\" />\r\n"
+			+ "            <Button fx:id=\"settingsButton\" layoutX=\"1716.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" onAction=\"#changeScene\" opacity=\"0.0\" prefHeight=\"38.0\" prefWidth=\"40.0\" text=\"Settings Button\" />\r\n"
+			+ "            <Button fx:id=\"homeButton\" layoutX=\"185.0\" layoutY=\"20.0\" mnemonicParsing=\"false\" onAction=\"#changeScene\" opacity=\"0.0\" prefHeight=\"55.0\" prefWidth=\"54.0\" text=\"Home Button\" />\r\n"
 			+ "            <TextField fx:id=\"searchButton\" layoutX=\"1357.0\" layoutY=\"30.0\" onAction=\"#search\" onKeyPressed=\"#searchVisibility\" prefHeight=\"25.0\" prefWidth=\"135.0\">\r\n"
 			+ "               <font>\r\n"
 			+ "                  <Font size=\"14.0\" />\r\n"

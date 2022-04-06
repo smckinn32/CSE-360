@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FileController {
 	
@@ -166,41 +167,66 @@ public class FileController {
 	}
 	
 	
-	
-	/**
+	/** Returns the user an ArrayList containing all file names as strings 
 	 * 
-	 * @param fileName
-	 * @param folderInDir
+	 * @param folder the location to check
+	 * @return An ArrayList of all files in the working directory's folder. If empty, returns null
 	 */
-	public void writeTo(String fileName, String folderInDir)
+	public static ArrayList<String> getDirContent(String folder)
 	{
+		ArrayList<String> dirContent = new ArrayList<String>();
 		String fDirectory = System.getProperty("user.dir");
 		String fSeparator = System.getProperty("file.separator");
-		createFileInDir(fileName, folderInDir);
-		//System.getProperties();
-		//System.out.println(fDirectory);
-		//System.out.println(fSeparator);
 		
-		File file = new File(fDirectory + fSeparator + folderInDir + fSeparator + fileName);
+		
+		File dir = new File(fDirectory + fSeparator + folder);
+		File[] allFiles = dir.listFiles();
 
-		try {
-			if(file.canWrite()) {
-				FileWriter fwrite = new FileWriter(file.getName());
-				fwrite.write("//This is just a test");
-				fwrite.close();
-				System.out.println("Successfully wrote to file");
-			}
-			else
-				System.out.println("Write permissions not enabled for: " + file.getName());
-			
-			
-			
-		} catch(IOException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
-	}
+		if(allFiles == null) //No files in folders
+			return null;
 		
+		for(int i = 0; i < allFiles.length; i++) {
+			if(allFiles[i].isFile())
+			{
+				dirContent.add(allFiles[i].getName());
+				//System.out.println("File " + (i+1) + ": " + dirContent.get(i));
+			}
+		}
+		
+		return dirContent;
+	}
+	
+	
+	
+	/**Returns the user an ArrayList containing all file names with directory attached as strings
+	 * 
+	 * @param folder the location to check
+	 * @return An ArrayList of all files in the working directory and their folder. If empty, returns null
+	 */
+	public static ArrayList<String> getDirAndContent(String folder)
+	{
+		ArrayList<String> dirContent = new ArrayList<String>();
+		String fDirectory = System.getProperty("user.dir");
+		String fSeparator = System.getProperty("file.separator");
+		
+		
+		File dir = new File(fDirectory + fSeparator + folder);
+		File[] allFiles = dir.listFiles();
+		
+		if(allFiles == null) //No files in folders
+			return null;
+		
+		for(int i = 0; i < allFiles.length; i++) {
+			if(allFiles[i].isFile())
+			{
+				dirContent.add(fSeparator + folder + fSeparator + allFiles[i].getName());
+				//System.out.println("File " + (i+1) + ": " + fSeparator + folder + fSeparator + allFiles[i].getName());
+			}
+		}
+		
+		return dirContent;
+	}
+	
 
 	/** Creates a new dish FXML page for admin users
 	 * 
@@ -234,160 +260,3 @@ public class FileController {
 	
 }	
 		
-		
-		
-		
-		/*		
-		try {
-			
-			//File writer
-			PrintWriter outFile = new PrintWriter(filename);
-			
-			outFile.print("1234");
-			outFile.close();
-			
-			//BufferedReader
-			FileReader fr = new FileReader(filename);
-			BufferedReader inFile = new BufferedReader(fr);
-			//Scanner in = new Scanner(fr)
-			
-			String line = inFile.readLine();
-		
-			while (line != null) {
-				System.out.println(line);
-				inputLine = Integer.parseInt(line);
-				sum += inputLine;
-				line = inFile.readLine();
-				
-			}
-			inFile.close();
-			
-			} catch(IOException e) {
-				System.out.println("IO exception" + e);
-			}
-			
-		
-		try {
-
-			FileOutputStream fileOut = new FileOutputStream(filename);
-			ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
-			
-			objOut.writeChars("1234");
-			
-			fileOut.close();
-			objOut.close();
-		}
-		catch(IOException ioe) {
-			System.out.print("Data file written exception\n");
-		}
-
-		//Deserialize DeptManagement from a File
-		System.out.print("Please enter a file name which we will read from:\n");
-		filename = stdin.readLine().trim();
-		try {
-/************************************************************************************
-***  Complete the follwing statement, read object from the data file and save the object
-as deptManage1
-***********************************************************************************/
-/*			FileInputStream fileIn = new FileInputStream(filename);
-			ObjectInputStream objIn = new ObjectInputStream(fileIn);
-			
-			deptManage1 = (DeptManagement)objIn.readObject();
-						
-			fileIn.close();
-			objIn.close();
-		} catch(Exception e) {}
-		
-		
-/************************************************************************************
-***  Complete the follwing statement, write above string inside the relevant file
-***********************************************************************************/
-/*		//Create output stream
-		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
-								
-			//Get string to write
-			System.out.print("Please enter a string to write inside the file:\n");
-			String temp = stdin.readLine();
-			temp += "\n";
-				
-			//Write String
-			writer.write(temp);
-			System.out.print(filename + " is written\n");
-						
-			//Close output stream
-			writer.close();
-		} catch(Exception e) {
-			System.out.print("Write string inside the file error\n");
-		}
-
-		System.out.print("Please enter a file name which we will read from:\n");
-		filename = stdin.readLine().trim();
-		
-/************************************************************************************
-***  Complete the follwing statement, read from above text file
-***********************************************************************************/
-/*		try {	
-			BufferedReader reader = new BufferedReader(new FileReader(filename));
-							
-			System.out.print(filename + " was read\n");
-							
-			String temp = reader.readLine();
-			System.out.print("The first line of the file is:\n");
-			System.out.print(temp + "\n");
-			
-			reader.close();
-		}
-			catch(FileNotFoundException fe) {
-			System.out.print(filename + " not found error\n");
-		}
-			catch(IOException ioe) {
-			System.out.print("Read string from the file error\n");
-		}
-		
-		//Serialize DeptManagement to a File
-		System.out.print("Please enter a file name which we will write to:\n");
-		filename = stdin.readLine().trim();
-		
-/************************************************************************************
-***  Complete the follwing statement, write object deptManage1 inside the data file
-***********************************************************************************/
-/*		try {
-			FileOutputStream fileOut = new FileOutputStream(filename);
-			ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
-								
-			objOut.writeObject(deptManage1);
-								
-			fileOut.close();
-			objOut.close();
-		}
-		catch(NotSerializableException se) {
-			System.out.print("Not serializable exception\n");
-		}
-		catch(IOException ioe) {
-			System.out.print("Data file written exception\n");
-		}
-
-		//Deserialize DeptManagement from a File
-		System.out.print("Please enter a file name which we will read from:\n");
-		filename = stdin.readLine().trim();
-		
-/************************************************************************************
-***  Complete the follwing statement, read object from the data file and save the object
-as deptManage1
-***********************************************************************************/
-/*		try {
-			FileInputStream fileIn = new FileInputStream(filename);
-			ObjectInputStream objIn = new ObjectInputStream(fileIn);
-						
-			deptManage1 = (DeptManagement)objIn.readObject();
-						
-			fileIn.close();
-			objIn.close();
-		}
-		catch(ClassNotFoundException ce) {
-			System.out.print("Class not found exception\n");
-		}
-	}
-*/
-

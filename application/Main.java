@@ -32,11 +32,12 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import file.InitializeCSEFiles;
+
 
 public class Main extends Application implements Initializable {
 	@Override
@@ -111,7 +112,7 @@ public class Main extends Application implements Initializable {
 	}
 	
 	public static void main(String[] args) {
-
+		InitializeCSEFiles.initialize();
 		launch(args);
 
 	}

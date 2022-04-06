@@ -18,6 +18,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
+import file.ButtonFXML;
+import file.FileController;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -76,23 +79,18 @@ public class PipeLine extends Main {
 
 	/* ------------------------------ Menu Array List: ------------------------------ */
 	ArrayList <String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
+	
+	/* ------------------------------ FXML Scenes ------------------------------ */
+	private static ArrayList<String> fxmlscene = ButtonFXML.getDirectoryAsResource("FXML");	//If fxmlbutton gets new buttons/updated - make potential controller changes in changeScene OR ButtonFXML
+	private static int totalID = fxmlscene.size();
+	private ArrayList<String> menuscene = ButtonFXML.getDirectoryAsResource("MENU");
+	private int totalMenuID = menuscene.size();
 
 	/* -------------------------------------------------------------------------- */
 	/*                                SCENE CHANGE FUNCTIONS:                     */
 	/* -------------------------------------------------------------------------- */
 
-	//To be implemented and stored elsewhere - temporary accommodations for initial implementation
-	//Position in array should match the object ID and the fxml page to load for all pages
-	//Both fxmlscene and fxmlbutton should be the exact same size array
-	private static String[] fxmlscene = { "/FXML/AccountSettings.fxml", "/FXML/AccountSettings.fxml", "/FXML/CreateAccountScene.fxml", "/FXML/ItemPlaceholder.fxml",  "/FXML/LoginScreen.fxml", "/FXML/Menu.fxml", 
-											"/FXML/Menu.fxml", "/FXML/OrderPlaced.fxml", "/FXML/SearchPreferences.fxml", "/FXML/ShoppingCart.fxml", "/FXML/YourOrders.fxml", 
-											 /*Default to login screen if error*/"/FXML/LoginScreen.fxml"  };
-	//If fxmlbutton gets new buttons/updated - make potential controller changes in changeScene
-	private static String[] fxmlbutton = {"settingsButton", "YourAccountButton", "createAccountButton", "searchBox", "SignIn", "homeButton", "Login", "orderPlacedButton", "SearchPreferencesButton",
-											"shoppingCartButton", "YourOrdersButton",  /*Default to login screen if error*/"" };
-	private static int totalID = fxmlscene.length;
 
-	
 	/** This class will change the scene based on a list of predefined scenes in a String[] format
 	 * 
 	 * @param e The event & object that was interacted with
@@ -104,17 +102,11 @@ public class PipeLine extends Main {
 			Control control = (Control) e.getSource();
 			Control updater = null;
 			String tempID = control.getId();
-			
-			//tempID = tempButton.getId();
-			int id = 0;
-			while(tempID.compareTo(fxmlbutton[id]) != 0 && id < totalID-1) {
-				id++;
-			}
-			
-			
+			int id = ButtonFXML.linkButtonToFXML(tempID);
+	
 			//Set the loader
 			//Find the page ID to go to, based on the button name
-			if(fxmlbutton[id].compareTo("searchBox") == 0) {
+			if(tempID.compareTo("searchBox") == 0) {
 				
 				//Gets the item selected from the search box
 				String temp = searchBox.getSelectionModel().getSelectedItem();
@@ -122,8 +114,9 @@ public class PipeLine extends Main {
 				//loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
 			}
 			else
-				loader = new FXMLLoader(getClass().getResource(fxmlscene[id]));
+				loader = new FXMLLoader(getClass().getResource(fxmlscene.get(id)));
 			
+			System.out.println("Load: " + fxmlscene.get(id));
 
 			//Set & show scene
 			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -132,7 +125,7 @@ public class PipeLine extends Main {
 			
 			
 			//Call secondary controllers functions
-			switch(fxmlbutton[id]) {
+			switch(tempID) {
 			case "Login", "homeButton" :
 				MenuController MenuController = loader.getController();
 				MenuController.updateMenuListView();
