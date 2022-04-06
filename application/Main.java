@@ -114,26 +114,9 @@ public class Main extends Application implements Initializable {
 	public static void main(String[] args) {
 		InitializeCSEFiles.initialize();
 		launch(args);
-
 	}
-	@FXML
-	Pane MainPane;
-	Pane AccountCreationPane;
-	Pane LoginPane;
-	Pane AccountSettings;
-	Pane Menu;
-	Pane OrderPlaced;
-	Pane SearchPreferences;
-	Pane ShoppingCart;
-	Pane YourOrders;
-
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-		//LoginPane = FXMLLoader.load(getClass().getResource("/FXML/LoginScreen.fxml"));
-
-
-		MainPane = new StackPane();
-
 
 	}
 }
