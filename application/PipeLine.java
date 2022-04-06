@@ -116,7 +116,8 @@ public class PipeLine extends Main {
 			//Find the page ID to go to, based on the button name
 			if(fxmlbutton[id].compareTo("searchBox") == 0) {
 				String temp = searchBox.getSelectionModel().getSelectedItem();
-				loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
+				loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
+				//loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
 			}
 			else
 				loader = new FXMLLoader(getClass().getResource(fxmlscene[id]));
