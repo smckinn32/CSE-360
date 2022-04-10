@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -14,13 +12,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountSettingsController">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccountSettingsController">
+
    <children>
       <Pane prefHeight="1080.0" prefWidth="1920.0">
          <children>
             <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/YourAccVersion2.png" />
+                  <Image url="@../images/YourAccFinal.png" />
                </image>
             </ImageView>
             <Button fx:id="exitButton" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
@@ -32,32 +31,27 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <ListView fx:id="searchBox" layoutX="1325.0" layoutY="67.0" onMouseClicked="#searchFunction" prefHeight="135.0" prefWidth="170.0" visible="false" />
+            <ListView fx:id="searchBox" layoutX="1325.0" layoutY="67.0" onMouseClicked="#changeScene" prefHeight="135.0" prefWidth="170.0" visible="false" />
             <Button layoutX="1503.0" layoutY="25.0" mnemonicParsing="false" onAction="#search" opacity="0.0" prefHeight="38.0" prefWidth="86.0" text="Shopping Cart Button" />
             <Button fx:id="YourAccountButton" layoutX="536.0" layoutY="232.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Your Account" />
             <Button fx:id="YourOrdersButton" layoutX="536.0" layoutY="297.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Your Orders" />
             <Button fx:id="SearchPreferencesButton" layoutX="536.0" layoutY="355.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="58.0" prefWidth="313.0" text="Search Preferences" />
-            <TextField fx:id="fullName" layoutX="931.0" layoutY="282.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
+            <Button fx:id="SaveInfoButton" layoutX="1276.0" layoutY="463.0" mnemonicParsing="false" onAction="#acceptChanges" opacity="0.0" prefHeight="38.0" prefWidth="155.0" text="SaveInfo Button" />
+            <TextField fx:id="firstName" layoutX="931.0" layoutY="282.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="Address" layoutX="931.0" layoutY="345.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
+            <TextField fx:id="lastName" layoutX="931.0" layoutY="345.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="Email" layoutX="931.0" layoutY="407.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
+            <TextField fx:id="address" layoutX="931.0" layoutY="407.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="478.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="passwordHidden" layoutX="931.0" layoutY="471.0" prefHeight="30.0" prefWidth="403.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </PasswordField>
-            <CheckBox fx:id="checkBox" layoutX="1348.0" layoutY="435.0" mnemonicParsing="false" onAction="#changeVisibility" />
             <TextField fx:id="passwordText" layoutX="931.0" layoutY="471.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="403.0" visible="false">
                <font>
                   <Font size="14.0" />
@@ -89,6 +83,11 @@
                   <TableColumn prefWidth="182.0" text="CSV" />
               </columns>
             </TableView>
+            <TextField fx:id="phoneNumber" layoutX="931.0" layoutY="471.0" onKeyPressed="#searchVisibility" prefHeight="30.0" prefWidth="329.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
          </children>
       </Pane>
    </children>

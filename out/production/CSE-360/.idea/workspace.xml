@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a97662c-03f7-4bf2-9885-bfbb1bb21675" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/GUI.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FXML/AdminAddMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FXML/AdminChangeMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/AdminAddToMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/AdminChangeMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/ButtonFXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/FileFXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file/InitializeCSEFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/AdminEditMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/LoginScreenUpdated.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/FXML/AdminAddMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/FXML/AdminChangeMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/AccountSettingsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/AdminAddToMenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/AdminChangeMenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/Cart.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/CreateAccountController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/LoginScreenController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/MenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/OrderPlacedController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/OrdersController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/PipeLine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/SearchPreferencesController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/ShoppingCartController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/application/YourAccountController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/file/ButtonFXML.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/file/FileController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/file/FileFXML.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/file/InitializeCSEFiles.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/food/Dish.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/food/FoodTester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/food/Menu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/images/AdminEditMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/images/LoginScreenUpdated.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/images/Placheholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/profiles/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/profiles/CommonU.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/profiles/Profile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/profiles/TestProfiles.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GUI/profiles/UserHolder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/360Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/360Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSE-360.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CSE-360.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/AccountSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/AccountSettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/CreateAccountScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/CreateAccountScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/ItemPlaceholder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/ItemPlaceholder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/OrderPlaced.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/OrderPlaced.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/SearchPreferences.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/SearchPreferences.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/ShoppingCart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/ShoppingCart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FXML/YourOrders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/FXML/YourOrders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/PipeLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/PipeLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/AdminViewMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Web 1920 – 5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Web 1920_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/libraries/lib1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/libraries/lib2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/.project" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/360Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/360Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/CSE-360.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/CSE-360.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/CSS/Main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/AccountSettings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/CreateAccountScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/ItemPlaceholder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/MENU/ItemPlaceholder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/LoginScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/MENU/ItemPlaceholder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/OrderPlaced.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/SearchPreferences.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/ShoppingCart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/FXML/YourOrders.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/CSS/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/CSS/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/AccountSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/AccountSettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/CreateAccountScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/CreateAccountScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/ItemPlaceholder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/ItemPlaceholder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/OrderPlaced.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/OrderPlaced.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/SearchPreferences.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/SearchPreferences.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/ShoppingCart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/ShoppingCart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/FXML/YourOrders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/FXML/YourOrders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/fonts/Acumin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/fonts/Acumin.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/AccountSettings2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/AccountSettings2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/AdminAddMenuItemPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/AdminAddMenuItemPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/AdminDeleteItemsPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/AdminDeleteItemsPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/ApplicationIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/ApplicationIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/CancelOrderElement.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/CancelOrderElement.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Cart.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Cart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/CheckBoxOFF.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/CheckBoxOFF.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/CheckBoxON.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/CheckBoxON.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/CreateAcc.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/CreateAcc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/ErrorIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/ErrorIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/EyeOff.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/EyeOff.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/EyeOn.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/EyeOn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Login.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Login.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Menu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Order Placed Screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Order Placed Screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/OrderCompletedElement.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/OrderCompletedElement.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/OrderDropDownElement.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/OrderDropDownElement.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Orders.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Orders.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Search Preferences.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Search Preferences.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Shopping Cart Placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Shopping Cart Placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Web 1920 – 5.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Web 1920 – 5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/Your Account.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/Your Account.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/switch-off.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/switch-off.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/GUI/GUI/bin/images/switch-on.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/GUI/GUI/bin/images/switch-on.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/TextFiles/cartContents.csv" beforeDir="false" afterPath="$PROJECT_DIR$/images/Placheholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/TextFiles/paymentInfo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/TextFiles/paymentInfo.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/Users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/AccountSettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/360Project/application/AccountSettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/CreateAccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/LoginScreenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/OrderPlacedController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/OrdersController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/PipeLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/SearchPreferencesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/ShoppingCartController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/application/YourAccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/fonts/Acumin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/food/Dish.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/food/FoodTester.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/food/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/AccountSettings2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/AdminAddToMenu.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/images/AdminAddToMenu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/AdminViewMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/ApplicationIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/CancelOrderElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/CheckBoxEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/CheckBoxOFF.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/CheckBoxON.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/CheckBoxSelected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/CreateAcc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/DownArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/ErrorIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/EyeOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/EyeOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Order Placed Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/OrderCompletedElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/OrderDropDownElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/OrderHistory.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/OrderHistoryAlt1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/images/OrderHistoryAlt1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/OrderHistoryAlt2.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/images/OrderHistoryAlt2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Orders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Search Preferences.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Web 1920 – 5.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/images/Web 1920_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/WhiteBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/images/WhiteBG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/Your Account.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/YourAccFinal.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/images/YourAccFinal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/YourAccVersion2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/switch-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/images/switch-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/paymentInfo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/profiles/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/profiles/CommonU.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/profiles/Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/profiles/TestProfiles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/360Project/profiles/UserHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.idea/libraries/lib1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/CSE-360.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/CSS/Main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/AccountSettings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/CreateAccountScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/ItemPlaceholder.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/LoginScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/Menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/OrderPlaced.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/SearchPreferences.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/ShoppingCart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/FXML/YourOrders.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/CSS/Main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/AccountSettings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/CreateAccountScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/ItemPlaceholder.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/LoginScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/Menu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/OrderPlaced.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/SearchPreferences.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/ShoppingCart.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/FXML/YourOrders.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/fonts/Acumin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/AccountSettings2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/AdminAddMenuItemPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/AdminDeleteItemsPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/ApplicationIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/CancelOrderElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/CheckBoxOFF.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/CheckBoxON.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/CreateAcc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/ErrorIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/EyeOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/EyeOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Order Placed Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/OrderCompletedElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/OrderDropDownElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Orders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Search Preferences.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Shopping Cart Placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Web 1920 – 5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/Your Account.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/switch-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/GUI/GUI/bin/images/switch-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/TextFiles/cartContents.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/TextFiles/cartContents.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/TextFiles/paymentInfo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/Users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/fonts/Acumin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/food/Menu.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/AccountSettings2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/AdminAddToMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/AdminViewMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/ApplicationIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/CancelOrderElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/CheckBoxEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/CheckBoxOFF.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/CheckBoxON.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/CheckBoxSelected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/CreateAcc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/DownArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/ErrorIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/EyeOff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/EyeOn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Order Placed Screen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/OrderCompletedElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/OrderDropDownElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/OrderHistory.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/OrderHistoryAlt1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/OrderHistoryAlt2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Orders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Search Preferences.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Web 1920 – 5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/WhiteBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/Your Account.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/YourAccVersion2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/switch-off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/images/switch-on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/paymentInfo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSE-360/profiles/Users.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/CSS/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/CSS/Main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/AccountSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/AccountSettings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/CreateAccountScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/CreateAccountScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/ItemPlaceholder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/ItemPlaceholder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/OrderPlaced.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/OrderPlaced.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/SearchPreferences.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/SearchPreferences.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/ShoppingCart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/ShoppingCart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/FXML/YourOrders.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/FXML/YourOrders.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/Users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/food/Menu.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/images/AdminDeleteItemsPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/images/Web 1920 – 5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/paymentInfo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI/paymentInfo.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/GUI/profiles/Users.csv" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2759aEnwtM98QsuvT7mxcGNCekQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/javafx-sdk-18/lib" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.40574712" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+  </component>
+  <component name="RunManager" selected="Application.Alt-gui_branch">
+    <configuration name="Alt-gui_branch" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="application.Main" />
+      <module name="CSE-360" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Laith\Documents\javafx-sdk-18\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="application.Main" />
+      <module name="360Project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Laith\Documents\javafx-sdk-17.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testProfiles" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="profiles.TestProfiles" />
+      <module name="360Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="Application.testProfiles" />
+      <item itemvalue="Application.Alt-gui_branch" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a97662c-03f7-4bf2-9885-bfbb1bb21675" name="Changes" comment="" />
+      <created>1648599142896</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648599142896</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

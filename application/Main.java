@@ -1,12 +1,29 @@
-/************************************************************
- * Author: Aften Elliott
- * Date: 3/25/2022
- * Class: CSE360 Mon 3pm
- ************************************************************/
+//*****************************************************************
+// Group: Monday Team 23
+// Members: 
+//	Abou Saleh, Laith
+//	Carter, Emerson
+//	Elliot, Aften
+//	Rodriguez, Dominic
+//  Mckinnon, Sean
+// Class: CSE 360
+// Time: 3:00pm Mon
+// Instructor: Nicole Ang-Wanek 
+// Description: This program is designed first to allow customers to place 
+//	orders, and purchase food with convenience. It additionally provides
+//	stores the tools to update their menu and provide benefits to their
+//	loyal customers.
+//*****************************************************************
+
+
 package application;
-import  javafx.application.Application;
+import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,11 +32,14 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
-
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import file.InitializeCSEFiles;
 
-public class Main extends Application {
+
+public class Main extends Application implements Initializable {
 	@Override
 	public void start(Stage stage) throws IOException {
 
@@ -92,9 +112,11 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-
+		InitializeCSEFiles.initialize();
 		launch(args);
+	}
+	@Override
+	public void initialize(URL url, ResourceBundle resourceBundle) {
 
 	}
-
 }

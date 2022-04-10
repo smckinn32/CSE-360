@@ -13,17 +13,14 @@ public class Admin extends Profile {
 
     }
 
-    //TODO: write block code for this method
-    public void setCoupon() {
-
+    // check if user has ordered, if they did. they
+    // give the user a coupon
+    public void setCoupon(CommonU user) {
+        if (user.getOrdHstry() > 0) {
+            user.createCoupon();
+        }
     }
 
-    public void editMenu(){
 
-    }
-
-    public void swapView(){
-
-    }
 
 }

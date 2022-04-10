@@ -8,7 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import profiles.Admin;
 import profiles.CommonU;
+import profiles.Profile;
 import profiles.UserHolder;
 
 import javax.imageio.IIOParam;
@@ -32,7 +34,14 @@ public class LoginScreenController extends PipeLine {
     // TODO: add an if statement to check if user is an Admin
     public void isValidUser(ActionEvent event) throws IOException {
 
+//        if (user.isAdmin())
+//            user = new Admin();
+//        else
+//            user = new CommonU();
+
+
         if(user.getUserData(userName.getText(), password.getText()) != null) {
+
             user.setUserName(userName.getText());
             user.setPassWord(password.getText());
             UserHolder holder = UserHolder.getUserInstance();
@@ -41,6 +50,17 @@ public class LoginScreenController extends PipeLine {
         }
         else
             System.out.println("User does not exist!");
+
+    }
+
+
+    // TODO: might need to change the fxid to "Login"
+    public void guestUser(ActionEvent event) throws IOException {
+        user.setUserName("GuestUser");
+        user.setPassWord("NoPass");
+        UserHolder holder = UserHolder.getUserInstance();
+        holder.setUser(user);
+        changeScene(event);
 
     }
 

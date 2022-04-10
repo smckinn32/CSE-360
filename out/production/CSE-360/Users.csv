@@ -1,8 +1,5 @@
 AdminUser;Password123;Laith;Abou Saleh;750 W Baseline Rd apt 2462 ,Tempe ,AZ 88453;8002512546;true
-<<<<<<< HEAD
-laithas;123;;;;;false
+laithas;123;laith;abou saleh;784 w basline rd, toeme zx ;84578947;false
+GuestUser;NoPass;;;;;false
 
-
-=======
-;;;;;;false
->>>>>>> b7dafed31e02c57c88f47a46b115c4e1a4eaab56
+Emerson;1234;;;;;false

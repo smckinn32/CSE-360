@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a97662c-03f7-4bf2-9885-bfbb1bb21675" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2759aEnwtM98QsuvT7mxcGNCekQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/javafx-sdk-18/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.40574712" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+  </component>
+  <component name="RunManager" selected="Application.Alt-gui_branch">
+    <configuration name="Alt-gui_branch" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="application.Main" />
+      <module name="360Project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Laith\Documents\javafx-sdk-18\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="application.Main" />
+      <module name="360Project" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Laith\Documents\javafx-sdk-17.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testProfiles" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="profiles.TestProfiles" />
+      <module name="360Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="Application.testProfiles" />
+      <item itemvalue="Application.Alt-gui_branch" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a97662c-03f7-4bf2-9885-bfbb1bb21675" name="Changes" comment="" />
+      <created>1648599142896</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648599142896</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

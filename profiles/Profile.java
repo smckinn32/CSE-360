@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 
 public abstract class Profile {
     private static final int USERATTRIBUTES = 7;
-    private static final String DATA_FILE = "Users.csv";
+    protected static final String DATA_FILE = "Users.csv";
     protected String uName;
     protected String pwd;
     protected String paymentInfo;

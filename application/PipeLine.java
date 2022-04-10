@@ -1,9 +1,10 @@
 /************************************************************
- * Author: Aften Elliott
+ * Author: Aften Elliott, Emerson Carter.
  * Date: 3/25/2022
  * Class: CSE360 Mon 3pm
  ************************************************************/
 package application;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,10 +12,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
+import file.ButtonFXML;
+import file.FileController;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -30,9 +36,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class PipeLine {
+
+public class PipeLine extends Main {
 
 	/* -------------------------------------------------------------------------- */
 	/*                                DECLARATIONS:                               */
@@ -57,9 +65,6 @@ public class PipeLine {
 	@FXML
 	private Button exitButton;
 
-	@FXML
-	private AnchorPane scenePane;
-
 	// Creates FXML text-field for the search button
 	@FXML
 	private TextField searchButton;
@@ -74,23 +79,18 @@ public class PipeLine {
 
 	/* ------------------------------ Menu Array List: ------------------------------ */
 	ArrayList <String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
+	
+	/* ------------------------------ FXML Scenes ------------------------------ */
+	private static ArrayList<String> fxmlscene = ButtonFXML.getDirectoryAsResource("FXML");	//If fxmlbutton gets new buttons/updated - make potential controller changes in changeScene OR ButtonFXML
+	private static int totalID = fxmlscene.size();
+	private ArrayList<String> menuscene = ButtonFXML.getDirectoryAsResource("MENU");
+	private int totalMenuID = menuscene.size();
 
 	/* -------------------------------------------------------------------------- */
 	/*                                SCENE CHANGE FUNCTIONS:                     */
 	/* -------------------------------------------------------------------------- */
 
-	//To be implemented and stored elsewhere - temporary accommodations for initial implementation
-	//Position in array should match the object ID and the fxml page to load for all pages
-	//Both fxmlscene and fxmlbutton should be the exact same size array
-	private static String[] fxmlscene = { "/FXML/AccountSettings.fxml", "/FXML/AccountSettings.fxml", "/FXML/CreateAccountScene.fxml", "/FXML/ItemPlaceholder.fxml",  "/FXML/LoginScreen.fxml", "/FXML/Menu.fxml", 
-											"/FXML/Menu.fxml", "/FXML/OrderPlaced.fxml", "/FXML/SearchPreferences.fxml", "/FXML/ShoppingCart.fxml", "/FXML/YourOrders.fxml", 
-											 /*Default to login screen if error*/"/FXML/LoginScreen.fxml"  };
-	//If fxmlbutton gets new buttons/updated - make potential controller changes in changeScene
-	private static String[] fxmlbutton = {"settingsButton", "YourAccountButton", "createAccountButton", "searchBox", "SignIn", "homeButton", "Login", "orderPlacedButton", "SearchPreferencesButton",
-											"shoppingCartButton", "YourOrdersButton",  /*Default to login screen if error*/"" };
-	private static int totalID = fxmlscene.length;
 
-	
 	/** This class will change the scene based on a list of predefined scenes in a String[] format
 	 * 
 	 * @param e The event & object that was interacted with
@@ -102,23 +102,21 @@ public class PipeLine {
 			Control control = (Control) e.getSource();
 			Control updater = null;
 			String tempID = control.getId();
-			
-			//tempID = tempButton.getId();
-			int id = 0;
-			while(tempID.compareTo(fxmlbutton[id]) != 0 && id < totalID-1) {
-				id++;
-			}
-			
-			
+			int id = ButtonFXML.linkButtonToFXML(tempID);
+	
 			//Set the loader
 			//Find the page ID to go to, based on the button name
-			if(fxmlbutton[id].compareTo("searchBox") == 0) {
+			if(tempID.compareTo("searchBox") == 0) {
+				
+				//Gets the item selected from the search box
 				String temp = searchBox.getSelectionModel().getSelectedItem();
-				loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
+				loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
+				//loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
 			}
 			else
-				loader = new FXMLLoader(getClass().getResource(fxmlscene[id]));
+				loader = new FXMLLoader(getClass().getResource(fxmlscene.get(id)));
 			
+			System.out.println("Load: " + fxmlscene.get(id));
 
 			//Set & show scene
 			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -127,7 +125,7 @@ public class PipeLine {
 			
 			
 			//Call secondary controllers functions
-			switch(fxmlbutton[id]) {
+			switch(tempID) {
 			case "Login", "homeButton" :
 				MenuController MenuController = loader.getController();
 				MenuController.updateMenuListView();
@@ -178,6 +176,21 @@ public class PipeLine {
 		// Runs the addToShoppingCart function present in the ShoppingCartcontroller to add a specific item to the shopping cart.
 		ShoppingCartController.addToShoppingCart("Test");
 		ShoppingCartController.updateShoppingCart();
+	}
+
+	// Function to change visibility of a password check-box.
+	@FXML
+	void changeVisibility(ActionEvent event) {
+		// Grabs the source, that being the selected button, and then puts it into a temporary button/
+		if (checkBox.isSelected()) {
+			passwordText.setText(password.getText());
+			passwordText.setVisible(true);
+			password.setVisible(false);
+			return;
+		}
+		password.setText(passwordText.getText());
+		password.setVisible(true);
+		passwordText.setVisible(false);
 	}
 
 	/* -------------------------------------------------------------------------- */
@@ -269,56 +282,4 @@ public class PipeLine {
 		}
 	}
 
-	// Function to change visibility of password check-box.
-	@FXML
-	void changeVisibility(ActionEvent event) {
-		// Grabs the source, that being the selected button, and then puts it into a temporary button/
-		if (checkBox.isSelected()) {
-			passwordText.setText(password.getText());
-			passwordText.setVisible(true);
-			password.setVisible(false);
-			return;
-		}
-		password.setText(passwordText.getText());
-		password.setVisible(true);
-		passwordText.setVisible(false);
-	}
-
-	// Checks if the currently selected search item matches the String, if it does it moves to that given scene.
-	public void searchFunction(MouseEvent event) throws IOException {
-
-		// Creates a string that holds the contents of the currently selected item from the pane view.
-		String selected = searchBox.getSelectionModel().getSelectedItem();
-
-		if (selected == "Lasagna") {
-			Parent root = FXMLLoader.load(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
-
-			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-			scene = new Scene(root);
-
-			stage.setScene(scene);
-
-			stage.show();
-
-			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-
-			scene.getStylesheets().add(css);
-
-		} else if (selected == "Beta") {
-			Parent root = FXMLLoader.load(getClass().getResource("/FXML/CreateAccountScene.fxml"));
-
-			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-			scene = new Scene(root);
-
-			stage.setScene(scene);
-
-			stage.show();
-
-			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-
-			scene.getStylesheets().add(css);
-		}
-	}
 }
