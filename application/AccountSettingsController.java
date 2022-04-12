@@ -10,6 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import profiles.CommonU;
+import profiles.Profile;
 import profiles.UserHolder;
 
 import javax.imageio.IIOParam;
@@ -30,11 +31,9 @@ public class AccountSettingsController extends PipeLine {
     private TextField phoneNumber;
 
     UserHolder holder = UserHolder.getUserInstance();
-    CommonU user = holder.getUser();
+    Profile user = holder.getUser();
 
     public void acceptChanges(Event e){
-        // UNCOMMENT THIS IF STATEMENT IF YOU WANT THE USER TO NOT BE ABLE TO CHANGE INFORMATION
-        //        if (user.getFirstName().equals("") && user.getLastName().equals(""))
         user.editUserData(firstName.getText(),lastName.getText(), address.getText(), phoneNumber.getText());
     }
 }

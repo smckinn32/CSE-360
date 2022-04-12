@@ -233,7 +233,7 @@ public class FileController {
 	 * @param fileName
 	 * @param folderInDir
 	 */
-	public void writeNewDish(String fileName, String folderInDir)
+	public boolean writeNewDish(String fileName, String folderInDir)
 	{
 		File file = getFileInDir(fileName, folderInDir);
 		
@@ -246,6 +246,7 @@ public class FileController {
 				fwrite.write(dishFXML.toString());
 				fwrite.close();
 				System.out.println("Successfully wrote to file");
+				return true;
 			}
 			else 
 				System.out.println("Write permissions not enabled for: " + file.getName());
@@ -255,6 +256,7 @@ public class FileController {
 			System.out.println("Error: Could not create new dish");
 			e.printStackTrace();
 		}
+		return false;
 	}
 	
 	

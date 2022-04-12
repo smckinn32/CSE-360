@@ -38,6 +38,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import profiles.Profile;
+import profiles.UserHolder;
 
 
 public class PipeLine extends Main {
@@ -106,17 +108,20 @@ public class PipeLine extends Main {
 	
 			//Set the loader
 			//Find the page ID to go to, based on the button name
+			Profile tempUser =  UserHolder.getUserInstance().getUser();
 			if(tempID.compareTo("searchBox") == 0) {
 				
 				//Gets the item selected from the search box
 				String temp = searchBox.getSelectionModel().getSelectedItem();
 				loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
 				//loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
+			} else if (tempID.compareTo("Login") == 0 && tempUser.isAdmin()) {
+				loader = new FXMLLoader(getClass().getResource("/FXML/AdminChangeMenu.fxml"));
 			}
 			else
 				loader = new FXMLLoader(getClass().getResource(fxmlscene.get(id)));
 			
-			System.out.println("Load: " + fxmlscene.get(id));
+			System.out.println("Loading: " + fxmlscene.get(id));
 
 			//Set & show scene
 			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -127,8 +132,10 @@ public class PipeLine extends Main {
 			//Call secondary controllers functions
 			switch(tempID) {
 			case "Login", "homeButton" :
-				MenuController MenuController = loader.getController();
-				MenuController.updateMenuListView();
+				if(!tempUser.isAdmin()) {
+					MenuController MenuController = loader.getController();
+					MenuController.updateMenuListView();
+				}
 				break;
 			case "shoppingCartButton" :
 				ShoppingCartController ShoppingCartController = loader.getController();

@@ -29,15 +29,15 @@ public class LoginScreenController extends PipeLine {
     private Scene scene;
     private Parent root;
 
-    CommonU user = new CommonU();
+    Profile user = new CommonU();
 
     // TODO: add an if statement to check if user is an Admin
     public void isValidUser(ActionEvent event) throws IOException {
 
-//        if (user.isAdmin())
-//            user = new Admin();
-//        else
-//            user = new CommonU();
+        if (user.isAdmin())
+            user = new Admin();
+        else
+            user = new CommonU();
 
 
         if(user.getUserData(userName.getText(), password.getText()) != null) {
