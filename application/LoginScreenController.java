@@ -31,8 +31,9 @@ public class LoginScreenController extends PipeLine {
 
     Profile user = new CommonU();
 
-    // TODO: add an if statement to check if user is an Admin
     public void isValidUser(ActionEvent event) throws IOException {
+
+        user.setUserInfo(userName.getText(), password.getText());
 
         if (user.isAdmin())
             user = new Admin();
@@ -54,7 +55,7 @@ public class LoginScreenController extends PipeLine {
     }
 
 
-    // TODO: might need to change the fxid to "Login"
+
     public void guestUser(ActionEvent event) throws IOException {
         user.setUserName("GuestUser");
         user.setPassWord("NoPass");

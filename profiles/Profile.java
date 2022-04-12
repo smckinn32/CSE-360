@@ -91,7 +91,7 @@ public abstract class Profile {
     }
 
     public void setAdmin(boolean admin) {
-        isAdmin = admin;
+        admin = admin;
     }
 
 

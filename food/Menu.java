@@ -137,26 +137,26 @@ public class Menu {
     return foundDishes;
   }
 
-  public String searchByTitle(String srch){
-    String foundDish = null;
-
-    for(int i = 0; i < menu.size(); i++){
-      if(menu.get(i).getDishName().equalsIgnoreCase(srch)){
-        foundDish = dishTitles[i];
-      }
-    }
-    return foundDish;
-  }
-
-  public static ArrayList<String> getDishTitle(){
-    dishTitles.clear();
-
-    for(int i=0; i<menu.size(); i++){
-      if(menu.get(i).getDishName().contains(' ')){
-        String tempTitle = menu.get(i).getDishName().replace(" ", "");}
-      dishTitles.add(tempTitle);
-    }
-
-  }
+//  public String searchByTitle(String srch){
+//    String foundDish = null;
+//
+//    for(int i = 0; i < menu.size(); i++){
+//      if(menu.get(i).getDishName().equalsIgnoreCase(srch)){
+//        foundDish = dishTitles[i];
+//      }
+//    }
+//    return foundDish;
+//  }
+//
+//  public static ArrayList<String> getDishTitle(){
+//    dishTitles.clear();
+//
+//    for(int i=0; i<menu.size(); i++){
+//      if(menu.get(i).getDishName().contains(' ')){
+//        String tempTitle = menu.get(i).getDishName().replace(" ", "");}
+//      dishTitles.add(tempTitle);
+//    }
+//
+//  }
 
 }
