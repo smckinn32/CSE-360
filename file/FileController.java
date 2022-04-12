@@ -25,7 +25,7 @@ public class FileController {
 			return true;
 		}
 		else
-			System.out.println("Directory exists.");
+			System.out.println("Directory " + folderName + " exists.");
 		return false;
 	}
 	
@@ -53,7 +53,7 @@ public class FileController {
 				return true;
 			}
 			else
-				System.out.println("File exists");
+				System.out.println("File " + fileName + " exists");
 			
 			
 		} catch(IOException e) {
@@ -85,7 +85,7 @@ public class FileController {
 				return true;
 			}
 			else
-				System.out.println("File exists");
+				System.out.println("File " + fileName + " exists");
 			
 			
 		} catch(IOException e) {
@@ -114,11 +114,11 @@ public class FileController {
 		
 		
 		if(file.delete()) {
-			System.out.println("File delete succeeded.");
+			System.out.println("File " + fileName + " delete succeeded.");
 			return true;
 		}
 		else
-			System.out.println("File delete failed.");
+			System.out.println("File " + fileName + " delete failed.");
 		
 		return false;
 	}
@@ -139,11 +139,11 @@ public class FileController {
 		File file = new File(fDirectory + fSeparator + fileName);
 		
 		if(file.delete()) {
-			System.out.println("File delete succeeded.");
+			System.out.println("File " + fileName + " delete succeeded.");
 			return true;
 		}
 		else
-			System.out.println("File delete failed.");
+			System.out.println("File " + fileName + " delete failed.");
 		
 		return false;
 	}
