@@ -32,9 +32,12 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
+
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.ResourceBundle;
 import file.InitializeCSEFiles;
 
@@ -57,7 +60,7 @@ public class Main extends Application implements Initializable {
 			stage.setScene(scene);
 
 			stage.show();
-			
+
 			// Changes icon of the application
 			stage.getIcons().add(new Image("/images/ApplicationIcon.png"));
 			
@@ -117,6 +120,15 @@ public class Main extends Application implements Initializable {
 	}
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
+		// Creates a copy of the menu to be used in the search bar functions.
+		File originalMenuFile = new File("MENU/Menu.txt");
+		File searchMenuFile = new File("TextFiles/SearchMenu.txt");
 
+		try {
+			Files.copy(originalMenuFile.toPath(),searchMenuFile.toPath());
+		}
+		catch (Exception e) {
+
+		}
 	}
 }

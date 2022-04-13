@@ -268,3 +268,63 @@
 #quantityError {
 	-fx-alignment: center;
 }
+
+#BuffaloWings {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#BuffaloWings:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#ChickenMarsala {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#ChickenMarsala:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#FrenchFries {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#FrenchFries:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Lasagna {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Lasagna:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Spaghetti {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Spaghetti:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}

@@ -1,0 +1,5 @@
+French Fries | All,Vegan,Vegetarian
+Buffalo Wings | All,Low Carb,Keto,Paleo
+Spaghetti | All
+Lasagna | All,Vegetarian
+Chicken Marsala | All,Keto,Paleo

@@ -6,24 +6,20 @@
 package application;
 
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Scanner;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javax.imageio.IIOParam;
 import java.io.*;
 import javafx.collections.FXCollections;
-import java.util.Arrays;
 
 
 public class ShoppingCartController extends PipeLine {
@@ -308,5 +304,25 @@ public class ShoppingCartController extends PipeLine {
             fw.flush();
             fw.close();
         }
+    }
+
+    // Function to update search box
+    public void updateSearchBox() {
+        try {
+            Scanner s = new Scanner(new File("TextFiles/SearchMenu.txt"));
+            while (s.hasNext()) {
+                searchMenuArrayList.add(s.next());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println(searchMenuArrayList);
+
+        // Adds the contents of the array to the list-view.
+        searchBox.getItems().addAll(searchMenuArrayList);
+
+        // Refreshes the list view.
+        searchBox.refresh();
+        System.out.println(searchMenuArrayList);
     }
 }

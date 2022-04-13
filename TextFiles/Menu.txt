@@ -1,5 +1,0 @@
-French Fries:7.99:5:potato,salt : All,Vegan,Vegetarian
-Buffalo Wings:15.15:10:chicken : All,Low Carb,Keto,Paleo
-Spaghetti:20.00:10:flour,egg,tomato : All
-Lasagna:14.55:15:flour,egg,tomato,cheese : All,Vegetarian
-Chicken Marsala:25.72:20:mushrooms, wine sauce, chicken, cheese, tomato : All,Keto,Paleo

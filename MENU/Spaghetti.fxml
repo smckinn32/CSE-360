@@ -19,6 +19,11 @@
                         <Image url="@../images/SpaghettiBGImage.png" />
                     </image>
                 </ImageView>
+                <ImageView fitHeight="73.0" fitWidth="337.0" layoutX="291.0" layoutY="906.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../images/WhiteBG.png" />
+                    </image>
+                </ImageView>
                 <Button fx:id="exitButton" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutFunction" opacity="0.0" prefHeight="47.0" prefWidth="62.0" text="Exit Button" />
                 <Button fx:id="shoppingCartButton" layoutX="1627.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="40.0" text="Shopping Cart Button" />
                 <Button fx:id="settingsButton" layoutX="1716.0" layoutY="25.0" mnemonicParsing="false" onAction="#changeScene" opacity="0.0" prefHeight="38.0" prefWidth="40.0" text="Settings Button" />
@@ -30,8 +35,8 @@
                 </TextField>
                 <ListView fx:id="searchBox" layoutX="1325.0" layoutY="67.0" onMouseClicked="#changeScene" prefHeight="135.0" prefWidth="170.0" visible="false" />
                 <Button layoutX="1503.0" layoutY="25.0" mnemonicParsing="false" onAction="#search" opacity="0.0" prefHeight="38.0" prefWidth="86.0" text="Search Button" />
-                <Button fx:id="Spaghetti" layoutX="297.0" layoutY="906.0" mnemonicParsing="false" onAction="#quantityCheck" opacity="0.0" prefHeight="72.0" prefWidth="329.0" text="addToShoppingCartButton" />
-                <TextField fx:id="QuantityField" layoutX="149.0" layoutY="912.0" prefHeight="61.0" prefWidth="117.0" promptText="Qty:">
+                <Button fx:id="Spaghetti" layoutX="299.0" layoutY="913.0" mnemonicParsing="false" onAction="#quantityCheck" prefHeight="60.0" prefWidth="315.0" />
+                <TextField fx:id="QuantityField" layoutX="149.0" layoutY="912.0" onKeyTyped="#limitTextFields" prefHeight="61.0" prefWidth="117.0" promptText="Qty:">
                     <font>
                         <Font size="14.0" />
                     </font></TextField>
