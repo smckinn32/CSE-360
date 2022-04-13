@@ -74,10 +74,11 @@ public class ShoppingCartController extends PipeLine {
     public ObservableList<String> cartArray = FXCollections.observableArrayList();
 
     /* -------------------------------------------------------------------------- */
-    /*                                FUNCTIONS:                                  */
+    /*                                OUTDATED:                                   */
     /* -------------------------------------------------------------------------- */
 
 
+/*
     // Function to add specific item to the shoppingCart, takes a String as an argument.
     public void addToShoppingCart(String MenuItem) {
         try {
@@ -107,7 +108,7 @@ public class ShoppingCartController extends PipeLine {
     // Populates the cartArray based on contents of the text-file, then pushes those to the listview when switching to the shopping cart.
     public void updateShoppingCart() {
 
-        // Reads teh text file and puts all of those items into the array.
+        // Reads the text file and puts all of those items into the array.
         try {
             Scanner s = new Scanner(new File(cartContents));
             while (s.hasNext()) {
@@ -126,15 +127,22 @@ public class ShoppingCartController extends PipeLine {
         cartListView.refresh();
     }
 
-    /*saves input into a text file in array format and comma format
+    */
+/*saves input into a text file in array format and comma format
      * also adds each part of the card information to an array list in the order
-     * cardName cardnumber carddate cardcvv*/
+     * cardName cardnumber carddate cardcvv*//*
+
+
+
+
     public void submit(ActionEvent event) {
         cardName = cardNameField.getText();
         cardNumber = cardNumField.getText();
         cardDate = cardDateField.getText();
         cardCvv = cardCvvField.getText();
-        /*bunch of conditionals to make sure user input meets card information requirements*/
+        */
+/*bunch of conditionals to make sure user input meets card information requirements*//*
+
         try {
             numberCheck = new BigInteger(cardNumber + cardDate + cardCvv);
             try {
@@ -156,14 +164,18 @@ public class ShoppingCartController extends PipeLine {
                     card.add(cardCvv);
                     cardError.setTextFill(Color.color(0,1,0));
                     cardError.setText("Payment information saved");
-                    /* Writes information from text fields to file (.csv) */
+                    */
+/* Writes information from text fields to file (.csv) *//*
+
                     FileWriter fWriter = new FileWriter(paymentInfo, true);
                     BufferedWriter bWriter = new BufferedWriter(fWriter);
                     bWriter.write(String.valueOf(card) + "\n");
                     bWriter.close();
                     System.out.println(card + "\n");
                     card.clear();
-                    /*switches scene to order placed*/
+                    */
+/*switches scene to order placed*//*
+
                     Parent root = FXMLLoader.load(getClass().getResource("/FXML/OrderPlaced.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -205,38 +217,96 @@ public class ShoppingCartController extends PipeLine {
     public void clearCart(ActionEvent event) {
 
     }
+*/
 
-    /* -------------------------------------------------------------------------- */
-    /*                                TESTING:                                    */
-    /* -------------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------------------- */
+    /*                                Functions to add and update theshopping cart:                                    */
+    /* --------------------------------------------------------------------------------------------------------------- */
     @FXML
-    private TableView<Cart> cartTableView;
-
-    @FXML
-    private TableColumn<Cart, String> menuItemType;
+    public TableView<Cart> cartTableView;
 
     @FXML
-    private TableColumn<Cart, Integer> menuItemAmount;
+    public TableColumn<Cart, String> menuItemType;
+
+    @FXML
+    public TableColumn<Cart, Integer> menuItemAmount;
 
     public final ObservableList <Cart> menuTableList = FXCollections.observableArrayList();
 
-    // Function to add items to the shopping cart table that takes the amount of items and the type of menu items as parameters.
-    public void addToCartTable(int Amount, String Type) {
+    // Adds item on the page to the shopping cart.
+    public void addToShoppingCart(String ItemType, int sumQuantity) {
+        menuItemType.setCellValueFactory(new PropertyValueFactory<Cart, String>("menuItemType"));
 
-        menuTableList.add(new Cart(Amount, Type));
-    }
+        menuItemAmount.setCellValueFactory(new PropertyValueFactory<Cart, Integer>("menuItemAmount"));
 
-    // Function to update the cart when switching to it.
-    public void testfunc() {
-        //menuItemAmount.setCellValueFactory(new PropertyValueFactory<Cart, Integer>("menuItemAmount"));
-        //menuItemType.setCellValueFactory(new PropertyValueFactory<Cart, String>("menuItemType"));
-
-        addToCartTable(20, "Value");
+        menuTableList.add(new Cart(ItemType, sumQuantity));
 
         cartTableView.setItems(menuTableList);
 
         cartTableView.refresh();
 
+        // Writes the contents of the table view into a text file
+        try {
+            copyCartContents();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Updates the menuTableList array based on the contents of the textfile.
+    public void updateShoppingCart() {
+        menuItemType.setCellValueFactory(new PropertyValueFactory<Cart, String>("menuItemType"));
+        menuItemAmount.setCellValueFactory(new PropertyValueFactory<Cart, Integer>("menuItemAmount"));
+
+        cartTableView.setItems(menuTableList);
+
+        String FieldDelimiter = ",";
+
+        BufferedReader br;
+
+        try {
+            br = new BufferedReader(new FileReader(cartContents));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] fields = line.split(FieldDelimiter, -1);
+
+                menuTableList.add(new Cart(fields[0], Integer.parseInt(fields[1])));
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+    }
+
+        System.out.println("updateShoppingCart is being called!");
+        // Adds the contents of the array into the table view and refreshes it
+
+        cartTableView.refresh();
+
         System.out.println(menuTableList);
+    }
+
+    // Function to copy contents of the table view into a csv file
+    public void copyCartContents() throws Exception {
+        FileWriter fw = null;
+
+        try {
+            fw  = new FileWriter(cartContents, true);
+
+            for (Cart cart : menuTableList) {
+
+                String text = cart.getMenuItemType() + "," + cart.getMenuItemAmount() + "\n";
+
+                fw.write(text);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        finally {
+
+            fw.flush();
+            fw.close();
+        }
     }
 }

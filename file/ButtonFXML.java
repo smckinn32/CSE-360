@@ -39,7 +39,7 @@ public class ButtonFXML {
 			page = 8;
 			break;			
 			
-		case "homeButton", "Login" :
+		case "homeButton", "Login", "changeBackToMenu1", "changeBackToMenu2" :
 			//Menu
 			page = 7;
 			break;

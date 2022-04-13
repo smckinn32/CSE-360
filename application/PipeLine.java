@@ -5,7 +5,7 @@
  ************************************************************/
 package application;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -28,15 +28,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Control;
-import javafx.scene.control.ListView;
-import javafx.scene.control.PasswordField;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import profiles.Profile;
 import profiles.UserHolder;
@@ -79,8 +73,22 @@ public class PipeLine extends Main {
 	@FXML
 	private Node MainNode;
 
+	// Textfield for quanity of items
+	@FXML
+	public TextField QuantityField;
+
+	// Label that shows if there's no quantity selected.
+	@FXML
+	public Label quantityError;
+
+	@FXML
+	public URL location;
+
 	/* ------------------------------ Menu Array List: ------------------------------ */
 	ArrayList <String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
+
+	/* ------------------------------ Array List for Search Box: ------------------------------ */
+	ArrayList <String> searchMenuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Masala"));
 	
 	/* ------------------------------ FXML Scenes ------------------------------ */
 	private static ArrayList<String> fxmlscene = ButtonFXML.getDirectoryAsResource("FXML");	//If fxmlbutton gets new buttons/updated - make potential controller changes in changeScene OR ButtonFXML
@@ -113,8 +121,11 @@ public class PipeLine extends Main {
 				
 				//Gets the item selected from the search box
 				String temp = searchBox.getSelectionModel().getSelectedItem();
-				loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
-				//loader = new FXMLLoader(getClass().getResource("/FXML/Item" + temp + ".fxml"));
+
+				//loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
+
+				loader = new FXMLLoader(getClass().getResource("/MENU/" + temp + ".fxml"));
+
 			} else if (tempID.compareTo("Login") == 0 && tempUser.isAdmin()) {
 				loader = new FXMLLoader(getClass().getResource("/FXML/AdminChangeMenu.fxml"));
 			}
@@ -142,8 +153,7 @@ public class PipeLine extends Main {
 				ShoppingCartController.updateShoppingCart();
 				break;
 			}
-			
-			
+
 			scene = new Scene(root);
 
 			stage.setScene(scene);
@@ -158,31 +168,36 @@ public class PipeLine extends Main {
 	/*                                FUNCTIONS USING MULTIPLE CONTROLLERS:                             */
 	/* ------------------------------------------------------------------------------------------------ */
 
-	// MULTIPLE CONTROLLER FUNCTIONALITY DEMONSTRATION FUNCTION:
-	public void addToShoppingCartButton(ActionEvent event) throws IOException {
+	// Function checks to see if quantity field has a value in it, if it does it then transitions to the shopping cart.
+	public void quantityCheck(ActionEvent event) throws IOException {
+		// Checks to make sure the quanity field isn't empty.
+		if (QuantityField.getText() == null || QuantityField.getText().trim().isEmpty()) {
+			quantityError.setText("You haven't entered the quantity!");
+			quantityError.setTextFill(Color.color(1,0,0));
+		}
+		// Switches to the shopping cart and adds both the item and quantity to the table view.
+		else {
 
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
+			Integer Quantity = Integer.valueOf(QuantityField.getText());
 
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			// Gets FX:ID of the button that is pressed.
+			Button btn = (Button) event.getSource();
+			String id = btn.getId();
 
-		root = loader.load();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/ShoppingCart.fxml"));
 
-		// Creates ShoppingCartController obj in order to be able to communicate between controllers and pass data between them.
-		ShoppingCartController ShoppingCartController = loader.getController();
+			root = loader.load();
 
-		scene = new Scene(root);
+			// Creates ShoppingCartController obj in order to be able to communicate between controllers and pass data between them.
+			ShoppingCartController ShoppingCartController = loader.getController();
 
-		stage.setScene(scene);
 
-		stage.show();
+			// Adds the FX:ID of the button pressed as a parameter into the shopping cart function, adds to the shopping cart and updates it.
+			ShoppingCartController.addToShoppingCart(id, Quantity);
 
-		// Adds CSS styling to new scene
-		String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-		scene.getStylesheets().add(css);
-
-		// Runs the addToShoppingCart function present in the ShoppingCartcontroller to add a specific item to the shopping cart.
-		ShoppingCartController.addToShoppingCart("Test");
-		ShoppingCartController.updateShoppingCart();
+			quantityError.setText("Item Successfully added to Cart!");
+			quantityError.setTextFill(Color.FORESTGREEN);
+		}
 	}
 
 	// Function to change visibility of a password check-box.
@@ -267,7 +282,7 @@ public class PipeLine extends Main {
 		searchBox.getItems().clear();
 
 		// Runs search function and populates list view with the results from that search.
-		searchBox.getItems().addAll(searchArray(searchButton.getText(), menuList));
+		searchBox.getItems().addAll(searchArray(searchButton.getText(), searchMenuList));
 	}
 
 	// Function to search the menu array list
@@ -288,5 +303,4 @@ public class PipeLine extends Main {
 			searchBox.setVisible(true);
 		}
 	}
-
 }
