@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.*;
 import java.util.stream.Collectors;
 import file.ButtonFXML;
@@ -358,6 +359,18 @@ public class PipeLine extends Main {
 				break;
 		}
 
+	}
+
+	public void refreshSearchFile() {
+		// Creates a copy of the menu to be used in the search bar functions.
+		File originalMenuFile = new File("MENU/Menu.txt");
+		File searchMenuFile = new File("TextFiles/SearchMenu.txt");
+
+		try {
+			Files.copy(originalMenuFile.toPath(),searchMenuFile.toPath());
+		}
+		catch (Exception e) {
+		}
 	}
 
 	/* -------------------------------------------------------------------------- */
