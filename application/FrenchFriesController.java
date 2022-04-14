@@ -1,13 +1,17 @@
 package application;
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import food.*;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Scanner;
+import java.io.*;
 
-public class SearchPreferencesController extends PipeLine {
+public class FrenchFriesController extends PipeLine {
 
     // Function to update the search box.
     public void updateSearchBox() {
@@ -35,16 +39,8 @@ public class SearchPreferencesController extends PipeLine {
         // Refreshes the list view.
         searchBox.refresh();
 
-    }
-
-    // Function to update the state of the search preferences buttons. Preserves the states of the buttons when switching back and forth between scenes.
-    public void updateSearchPreferences() {
+        System.out.println("update search box is being called!");
+        System.out.println(searchMenuArrayList);
 
     }
-
-    // Function to change the search preferences, i.e. what shows up in the search
-    public void changeSearchPreferences(ActionEvent event) {
-
-    }
-
 }

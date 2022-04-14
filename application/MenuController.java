@@ -2,18 +2,12 @@ package application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import food.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class MenuController extends PipeLine {
 
@@ -62,6 +56,9 @@ public class MenuController extends PipeLine {
         // Refreshes the list view.
         searchBox.refresh();
 
+        System.out.println("update search box is being called!");
+        System.out.println(searchMenuArrayList);
+
     }
 
     public void updateMenu() {
@@ -98,8 +95,10 @@ public class MenuController extends PipeLine {
         String temp = menuListView.getSelectionModel().getSelectedItem();
 
         switch (temp) {
-            case "Buffalo-Wings":
-                Parent root = FXMLLoader.load(getClass().getResource("/MENU/Buffalo-Wings.fxml"));
+            case "BuffaloWings":
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/MENU/BuffaloWings.fxml"));
+
+                root = loader.load();
 
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -113,11 +112,15 @@ public class MenuController extends PipeLine {
 
                 scene.getStylesheets().add(css);
 
-                updateSearchBox();
+                // Updates the searchbox.
+                BuffaloWingsController BuffaloWingsController = loader.getController();
+                BuffaloWingsController.updateSearchBox();
 
                 break;
-            case "Chicken-Marsala":
-                root = FXMLLoader.load(getClass().getResource("/MENU/Chicken-Marsala.fxml"));
+            case "ChickenMarsala":
+                loader = new FXMLLoader(getClass().getResource("/MENU/ChickenMarsala.fxml"));
+
+                root = loader.load();
 
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -131,11 +134,15 @@ public class MenuController extends PipeLine {
 
                 scene.getStylesheets().add(css);
 
-                updateSearchBox();
+                // Updates the searchbox.
+                ChickenMarsalaController ChickenMarsalaController = loader.getController();
+                ChickenMarsalaController.updateSearchBox();
 
                 break;
-            case "French-Fries":
-                root = FXMLLoader.load(getClass().getResource("/MENU/French-Fries.fxml"));
+            case "FrenchFries":
+                loader = new FXMLLoader(getClass().getResource("/MENU/FrenchFries.fxml"));
+
+                root = loader.load();
 
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -149,11 +156,15 @@ public class MenuController extends PipeLine {
 
                 scene.getStylesheets().add(css);
 
-                updateSearchBox();
+                // Updates the searchbox.
+                FrenchFriesController FrenchFriesController = loader.getController();
+                FrenchFriesController.updateSearchBox();
 
                 break;
             case "Lasagna":
-                root = FXMLLoader.load(getClass().getResource("/MENU/Lasagna.fxml"));
+                loader = new FXMLLoader(getClass().getResource("/MENU/Lasagna.fxml"));
+
+                root = loader.load();
 
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -167,11 +178,15 @@ public class MenuController extends PipeLine {
 
                 scene.getStylesheets().add(css);
 
-                updateSearchBox();
+                // Updates the searchbox.
+                LasagnaController LasagnaController = loader.getController();
+                LasagnaController.updateSearchBox();
 
                 break;
             case "Spaghetti":
-                root = FXMLLoader.load(getClass().getResource("/MENU/Spaghetti.fxml"));
+                loader = new FXMLLoader(getClass().getResource("/MENU/Spaghetti.fxml"));
+
+                root = loader.load();
 
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -185,7 +200,9 @@ public class MenuController extends PipeLine {
 
                 scene.getStylesheets().add(css);
 
-                updateSearchBox();
+                // Updates the searchbox.
+                SpaghettiController SpaghettiController = loader.getController();
+                SpaghettiController.updateSearchBox();
 
                 break;
         }

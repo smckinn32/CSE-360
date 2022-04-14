@@ -4,23 +4,16 @@
  * Class: CSE360 Mon 3pm
  ************************************************************/
 package application;
-import javafx.beans.value.ObservableValue;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-
 import java.io.*;
 import java.net.URL;
 import java.util.*;
-import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
-
 import file.ButtonFXML;
-import file.FileController;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -29,17 +22,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import profiles.Profile;
 import profiles.UserHolder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import static java.awt.SystemColor.text;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TextField;
-import javafx.scene.control.*;
+
 public class PipeLine extends Main {
 
 	/* -------------------------------------------------------------------------- */
@@ -49,7 +37,7 @@ public class PipeLine extends Main {
 	// Creates the primary stage, scene, and root.
 	public Stage stage;
 	public Scene scene;
-	private Parent root;
+	public Parent root;
 
 	// Creates FXML fields to be used in the password visibility function.
 	@FXML
@@ -104,7 +92,6 @@ public class PipeLine extends Main {
 	/*                                SCENE CHANGE FUNCTIONS:                     */
 	/* -------------------------------------------------------------------------- */
 
-
 	/** This class will change the scene based on a list of predefined scenes in a String[] format
 	 * 
 	 * @param e The event & object that was interacted with
@@ -131,6 +118,8 @@ public class PipeLine extends Main {
 
 			loader = new FXMLLoader(getClass().getResource("/MENU/" + temp + ".fxml"));
 
+			// TODO: Need to create a way to be able to create object of a controller at runtime, take the name of the pressed item in the searchBox and assign that to a class object somehow?
+
 			// TODO: This function is not being called for some reason?
 			updateSearchBox();
 
@@ -145,7 +134,6 @@ public class PipeLine extends Main {
 		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 
 		root = loader.load();
-
 
 		//Call secondary controllers functions
 		switch (tempID) {
@@ -173,9 +161,6 @@ public class PipeLine extends Main {
 				SearchPreferencesController SearchPreferencesController = loader.getController();
 				SearchPreferencesController.updateSearchBox();
 				SearchPreferencesController.updateSearchPreferences();
-				break;
-			case "BuffaloWings", "ChickenMarsala", "FrenchFries", "Lasagna", "Spaghetti", "ItemPlaceholder":
-				updateSearchBox();
 				break;
 		}
 
@@ -261,8 +246,10 @@ public class PipeLine extends Main {
 		String temp = searchBox.getSelectionModel().getSelectedItem();
 
 		switch (temp) {
-			case "Buffalo-Wings":
-				Parent root = FXMLLoader.load(getClass().getResource("/MENU/Buffalo-Wings.fxml"));
+			case "BuffaloWings":
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/MENU/BuffaloWings.fxml"));
+
+				root = loader.load();
 
 				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -276,11 +263,15 @@ public class PipeLine extends Main {
 
 				scene.getStylesheets().add(css);
 
-				updateSearchBox();
+				// Updates the searchbox.
+				BuffaloWingsController BuffaloWingsController = loader.getController();
+				BuffaloWingsController.updateSearchBox();
 
 				break;
-			case "Chicken-Marsala":
-				root = FXMLLoader.load(getClass().getResource("/MENU/Chicken-Marsala.fxml"));
+			case "ChickenMarsala":
+				loader = new FXMLLoader(getClass().getResource("/MENU/ChickenMarsala.fxml"));
+
+				root = loader.load();
 
 				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -294,11 +285,15 @@ public class PipeLine extends Main {
 
 				scene.getStylesheets().add(css);
 
-				updateSearchBox();
+				// Updates the searchbox.
+				ChickenMarsalaController ChickenMarsalaController = loader.getController();
+				ChickenMarsalaController.updateSearchBox();
 
 				break;
-			case "French-Fries":
-				root = FXMLLoader.load(getClass().getResource("/MENU/French-Fries.fxml"));
+			case "FrenchFries":
+				loader = new FXMLLoader(getClass().getResource("/MENU/FrenchFries.fxml"));
+
+				root = loader.load();
 
 				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -312,11 +307,15 @@ public class PipeLine extends Main {
 
 				scene.getStylesheets().add(css);
 
-				updateSearchBox();
+				// Updates the searchbox.
+				FrenchFriesController FrenchFriesController = loader.getController();
+				FrenchFriesController.updateSearchBox();
 
 				break;
 			case "Lasagna":
-				root = FXMLLoader.load(getClass().getResource("/MENU/Lasagna.fxml"));
+				loader = new FXMLLoader(getClass().getResource("/MENU/Lasagna.fxml"));
+
+				root = loader.load();
 
 				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -330,11 +329,15 @@ public class PipeLine extends Main {
 
 				scene.getStylesheets().add(css);
 
-				updateSearchBox();
+				// Updates the searchbox.
+				LasagnaController LasagnaController = loader.getController();
+				LasagnaController.updateSearchBox();
 
 				break;
 			case "Spaghetti":
-				root = FXMLLoader.load(getClass().getResource("/MENU/Spaghetti.fxml"));
+				loader = new FXMLLoader(getClass().getResource("/MENU/Spaghetti.fxml"));
+
+				root = loader.load();
 
 				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -348,11 +351,12 @@ public class PipeLine extends Main {
 
 				scene.getStylesheets().add(css);
 
-				updateSearchBox();
+				// Updates the searchbox.
+				SpaghettiController SpaghettiController = loader.getController();
+				SpaghettiController.updateSearchBox();
 
 				break;
 		}
-
 
 	}
 

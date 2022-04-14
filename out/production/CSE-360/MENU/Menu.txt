@@ -1,5 +1,5 @@
-French-Fries "" 1 2 3
-Buffalo-Wings "" 1 6 5 4
+FrenchFries "" 1 2 3
+BuffaloWings "" 1 6 5 4
 Spaghetti "" 1
 Lasagna "" 1 3
-Chicken-Marsala "" 5 4
+ChickenMarsala "" 5 4
