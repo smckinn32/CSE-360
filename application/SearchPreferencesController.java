@@ -59,13 +59,13 @@ public class SearchPreferencesController extends PipeLine {
 
     }
 
-
-
+    // TODO: need to write function to properly update.
     // Function to update the state of the search preferences buttons. Preserves the states of the buttons when switching back and forth between scenes.
     public void updateSearchPreferences() {
 
     }
 
+    // TODO: need to finish some logic.
     // Function to change the search preferences, i.e. what shows up in the search
     public void changeSearchPreferences (ActionEvent event) {
         if(AllSwitch.isSelected()) {

@@ -89,9 +89,9 @@ public class PipeLine extends Main {
 	private ArrayList<String> menuscene = ButtonFXML.getDirectoryAsResource("MENU");
 	private int totalMenuID = menuscene.size();
 
-	/* -------------------------------------------------------------------------- */
-	/*                                SCENE CHANGE FUNCTIONS:                     */
-	/* -------------------------------------------------------------------------- */
+	/* ------------------------------------------------------------------------- */
+	/*                                SCENE CHANGE FUNCTION:                     */
+	/* ------------------------------------------------------------------------- */
 
 	/** This class will change the scene based on a list of predefined scenes in a String[] format
 	 * 
@@ -361,6 +361,7 @@ public class PipeLine extends Main {
 
 	}
 
+	// Function to update the search text file.
 	public void refreshSearchFile() {
 		// Creates a copy of the menu to be used in the search bar functions.
 		File originalMenuFile = new File("MENU/Menu.txt");
@@ -468,7 +469,7 @@ public class PipeLine extends Main {
 		}
 	}
 
-	// Function to update the search box.
+	// Function to update the search box when switching between scenes.
 	public void updateSearchBox() {
 		BufferedReader br;
 
