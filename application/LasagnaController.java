@@ -27,7 +27,7 @@ public class LasagnaController extends PipeLine {
 
                 searchMenuArrayList.add(fields);
             }
-
+            br.close();
         } catch (Exception ex) {
             ex.printStackTrace();
 

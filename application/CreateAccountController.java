@@ -27,6 +27,8 @@ public class CreateAccountController extends PipeLine {
         else {
             CommonU newUser = new CommonU(userName.getText(), password.getText());
             newUser.sendUserData();
+            PipeLine PipeLineobj = new PipeLine();
+            PipeLineobj.copySearchFile();
             changeScene(event);
         }
     }

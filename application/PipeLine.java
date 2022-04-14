@@ -374,6 +374,19 @@ public class PipeLine extends Main {
 		}
 	}
 
+	public void copySearchFile() {
+		// Creates a copy of the menu to be used in the search bar functions.
+		File originalMenuFile = new File("MENU/Menu.txt");
+		File searchMenuFile = new File("TextFiles/SearchMenu.txt");
+
+		try {
+			Files.copy(originalMenuFile.toPath(),searchMenuFile.toPath());
+		}
+		catch (Exception e) {
+
+		}
+	}
+
 	/* -------------------------------------------------------------------------- */
 	/*                                LOGOUT FUNCTION                             */
 	/* -------------------------------------------------------------------------- */
@@ -421,14 +434,16 @@ public class PipeLine extends Main {
 			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
 			scene.getStylesheets().add(css);
 
-			// Clears the contents of the cart when logging out.
+			// Clears the contents of the cart when logging out. Also deletes the search menu text file as well.
 			try {
 				new FileWriter("TextFiles/cartContents.csv", false).close();
+
+				File SearchMenuObj = new File("TextFiles/SearchMenu.txt");
+				SearchMenuObj.delete();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			File SearchMenuObj = new File("TextFiles/SearchMenu.txt");
-			SearchMenuObj.delete();
+
 		}
 	}
 
@@ -483,6 +498,8 @@ public class PipeLine extends Main {
 
 				searchMenuArrayList.add(fields);
 			}
+
+			br.close();
 
 		} catch (Exception ex) {
 			ex.printStackTrace();

@@ -269,7 +269,7 @@ public class ShoppingCartController extends PipeLine {
 
                 menuTableList.add(new Cart(fields[0], Integer.parseInt(fields[1])));
             }
-
+            br.close();
         } catch (Exception ex) {
             ex.printStackTrace();
 
@@ -320,7 +320,7 @@ public class ShoppingCartController extends PipeLine {
 
                 searchMenuArrayList.add(fields);
             }
-
+            br.close();
         } catch (Exception ex) {
             ex.printStackTrace();
 

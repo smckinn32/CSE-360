@@ -45,6 +45,8 @@ public class MenuController extends PipeLine {
                 searchMenuArrayList.add(fields);
             }
 
+            br.close();
+
         } catch (Exception ex) {
             ex.printStackTrace();
 
@@ -75,6 +77,8 @@ public class MenuController extends PipeLine {
 
                 menuList.add(fields);
             }
+
+            br.close();
 
         } catch (Exception ex) {
             ex.printStackTrace();
