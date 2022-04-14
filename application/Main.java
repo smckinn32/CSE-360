@@ -106,8 +106,11 @@ public class Main extends Application implements Initializable {
 		
 		// Exits the program if the user selects yes. Deletes any contents within specified files.
 		if(logoutAlert.showAndWait().get() == ButtonType.OK) {
-			// Clears the contents of the cart from text file
+			// Clears the contents of the cart and searchmenu txt file.
 			new FileWriter("TextFiles/cartContents.csv", false).close();
+
+			File SearchMenuObj = new File("TextFiles/SearchMenu.txt");
+			SearchMenuObj.delete();
 
 			// Exits the program.
 			Platform.exit();

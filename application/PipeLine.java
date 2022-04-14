@@ -12,10 +12,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import java.io.*;
 import java.net.URL;
 import java.util.*;
 import java.util.function.UnaryOperator;
@@ -49,8 +47,8 @@ public class PipeLine extends Main {
 	/* -------------------------------------------------------------------------- */
 
 	// Creates the primary stage, scene, and root.
-	private Stage stage;
-	private Scene scene;
+	public Stage stage;
+	public Scene scene;
 	private Parent root;
 
 	// Creates FXML fields to be used in the password visibility function.
@@ -91,7 +89,7 @@ public class PipeLine extends Main {
 	public URL location;
 
 	/* ------------------------------ Menu Array List: ------------------------------ */
-	ArrayList <String> menuList = new ArrayList<>(Arrays.asList("French Fries", "Buffalo Wings", "Spaghetti", "Lasagna", "Chicken Marsala"));
+	ArrayList <String> menuList = new ArrayList<>(Arrays.asList());
 
 	/* ------------------------------ Array List for Search Box: ------------------------------ */
 	ArrayList <String> searchMenuArrayList = new ArrayList<>(Arrays.asList());
@@ -112,81 +110,83 @@ public class PipeLine extends Main {
 	 * @param e The event & object that was interacted with
 	 * @throws IOException with un-handled errors
 	 */
-	public void changeScene(Event e) throws IOException{
-			FXMLLoader loader = null;
-			Parent root = null;
-			Control control = (Control) e.getSource();
-			Control updater = null;
-			String tempID = control.getId();
-			int id = ButtonFXML.linkButtonToFXML(tempID);
-	
-			//Set the loader
-			//Find the page ID to go to, based on the button name
-			Profile tempUser =  UserHolder.getUserInstance().getUser();
-			if(tempID.compareTo("searchBox") == 0) {
-				
-				//Gets the item selected from the search box
-				String temp = searchBox.getSelectionModel().getSelectedItem();
+	public void changeScene(Event e) throws IOException {
+		FXMLLoader loader = null;
+		Parent root = null;
+		Control control = (Control) e.getSource();
+		Control updater = null;
+		String tempID = control.getId();
+		int id = ButtonFXML.linkButtonToFXML(tempID);
 
-				//loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
+		//Set the loader
+		//Find the page ID to go to, based on the button name
+		Profile tempUser = UserHolder.getUserInstance().getUser();
+		String temp = null;
+		if (tempID.compareTo("searchBox") == 0) {
 
-				loader = new FXMLLoader(getClass().getResource("/MENU/" + temp + ".fxml"));
+			//Gets the item selected from the search box
+			temp = searchBox.getSelectionModel().getSelectedItem();
 
-				updateSearchBox();
+			//loader = new FXMLLoader(getClass().getResource("/FXML/ItemPlaceholder.fxml"));
 
-			} else if (tempID.compareTo("Login") == 0 && tempUser.isAdmin()) {
-				loader = new FXMLLoader(getClass().getResource("/FXML/AdminChangeMenu.fxml"));
-			}
-			else
-				loader = new FXMLLoader(getClass().getResource(fxmlscene.get(id)));
-			
-			System.out.println("Loading: " + fxmlscene.get(id));
+			loader = new FXMLLoader(getClass().getResource("/MENU/" + temp + ".fxml"));
 
-			//Set & show scene
-			stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-			
-			root = loader.load();
-			
-			
-			//Call secondary controllers functions
-			switch(tempID) {
-			case "Login", "homeButton" :
-				if(!tempUser.isAdmin()) {
+			// TODO: This function is not being called for some reason?
+			updateSearchBox();
+
+		} else if (tempID.compareTo("Login") == 0 && tempUser.isAdmin()) {
+			loader = new FXMLLoader(getClass().getResource("/FXML/AdminChangeMenu.fxml"));
+		} else
+			loader = new FXMLLoader(getClass().getResource(fxmlscene.get(id)));
+
+		System.out.println("Loading: " + fxmlscene.get(id));
+
+		//Set & show scene
+		stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+
+		root = loader.load();
+
+
+		//Call secondary controllers functions
+		switch (tempID) {
+			case "Login", "homeButton", "changeBackToMenu1", "changeBackToMenu2":
+				if (!tempUser.isAdmin()) {
 					MenuController MenuController = loader.getController();
-					MenuController.updateMenuListView();
+					MenuController.updateMenu();
 					MenuController.updateSearchBox();
 				}
 				break;
-			case "shoppingCartButton" :
+			case "shoppingCartButton":
 				ShoppingCartController ShoppingCartController = loader.getController();
 				ShoppingCartController.updateShoppingCart();
 				ShoppingCartController.updateSearchBox();
 				break;
-			case "settingsButton" , "YourAccountButton":
+			case "settingsButton", "YourAccountButton":
 				AccountSettingsController AccountSettingsController = loader.getController();
 				AccountSettingsController.updateSearchBox();
 				break;
-			case "YourOrdersButton" :
+			case "YourOrdersButton":
 				OrdersController OrdersController = loader.getController();
 				OrdersController.updateSearchBox();
 				break;
-			case "SearchPreferencesButton" :
+			case "SearchPreferencesButton":
 				SearchPreferencesController SearchPreferencesController = loader.getController();
 				SearchPreferencesController.updateSearchBox();
+				SearchPreferencesController.updateSearchPreferences();
 				break;
-			case "Buffalo Wings", "Chicken Marsala", "French Fries", "Lasagna", "Spaghetti"  :
+			case "BuffaloWings", "ChickenMarsala", "FrenchFries", "Lasagna", "Spaghetti", "ItemPlaceholder":
 				updateSearchBox();
 				break;
-			}
+		}
 
-			scene = new Scene(root);
+		scene = new Scene(root);
 
-			stage.setScene(scene);
+		stage.setScene(scene);
 
-			stage.show();
+		stage.show();
 
-			String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
-			scene.getStylesheets().add(css);
+		String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+		scene.getStylesheets().add(css);
 	}
 
 	/* ------------------------------------------------------------------------------------------------ */
@@ -254,6 +254,108 @@ public class PipeLine extends Main {
 		passwordText.setVisible(false);
 	}
 
+	// TODO: TEMPORARY FUNCTION USED UNTIL MAIN CHANGESCENE WORKS WITH THE SEARCHBOX! This is hard coded so it wont work with the admin functionalities...
+	public void changeSearchBox(MouseEvent event) throws IOException {
+
+		//Gets the item selected from the search box
+		String temp = searchBox.getSelectionModel().getSelectedItem();
+
+		switch (temp) {
+			case "Buffalo-Wings":
+				Parent root = FXMLLoader.load(getClass().getResource("/MENU/Buffalo-Wings.fxml"));
+
+				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+				scene = new Scene(root);
+
+				stage.setScene(scene);
+
+				stage.show();
+
+				String css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+
+				scene.getStylesheets().add(css);
+
+				updateSearchBox();
+
+				break;
+			case "Chicken-Marsala":
+				root = FXMLLoader.load(getClass().getResource("/MENU/Chicken-Marsala.fxml"));
+
+				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+				scene = new Scene(root);
+
+				stage.setScene(scene);
+
+				stage.show();
+
+				css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+
+				scene.getStylesheets().add(css);
+
+				updateSearchBox();
+
+				break;
+			case "French-Fries":
+				root = FXMLLoader.load(getClass().getResource("/MENU/French-Fries.fxml"));
+
+				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+				scene = new Scene(root);
+
+				stage.setScene(scene);
+
+				stage.show();
+
+				css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+
+				scene.getStylesheets().add(css);
+
+				updateSearchBox();
+
+				break;
+			case "Lasagna":
+				root = FXMLLoader.load(getClass().getResource("/MENU/Lasagna.fxml"));
+
+				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+				scene = new Scene(root);
+
+				stage.setScene(scene);
+
+				stage.show();
+
+				css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+
+				scene.getStylesheets().add(css);
+
+				updateSearchBox();
+
+				break;
+			case "Spaghetti":
+				root = FXMLLoader.load(getClass().getResource("/MENU/Spaghetti.fxml"));
+
+				stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+				scene = new Scene(root);
+
+				stage.setScene(scene);
+
+				stage.show();
+
+				css = this.getClass().getResource("/CSS/Main.css").toExternalForm();
+
+				scene.getStylesheets().add(css);
+
+				updateSearchBox();
+
+				break;
+		}
+
+
+	}
+
 	/* -------------------------------------------------------------------------- */
 	/*                                LOGOUT FUNCTION                             */
 	/* -------------------------------------------------------------------------- */
@@ -307,6 +409,8 @@ public class PipeLine extends Main {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			File SearchMenuObj = new File("TextFiles/SearchMenu.txt");
+			SearchMenuObj.delete();
 		}
 	}
 
@@ -347,24 +451,31 @@ public class PipeLine extends Main {
 		}
 	}
 
+	// Function to update the search box.
 	public void updateSearchBox() {
-		try {
-			Scanner s = new Scanner(new File("TextFiles/SearchMenu.txt"));
-			while (s.hasNext()) {
-				searchMenuArrayList.add(s.next());
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		System.out.println(searchMenuArrayList);
+		BufferedReader br;
 
-		// Adds the contents of the array to the list-view.
+		try {
+			br = new BufferedReader(new FileReader("TextFiles/SearchMenu.txt"));
+
+			String line;
+
+			while ((line = br.readLine()) != null) {
+				String fields = line.split(" ")[0];
+
+				searchMenuArrayList.add(fields);
+			}
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+
+		}
+
+		// Adds the contents of the arraylist into the list view
 		searchBox.getItems().addAll(searchMenuArrayList);
 
 		// Refreshes the list view.
 		searchBox.refresh();
-		System.out.println(searchMenuArrayList);
-		System.out.println("update is being called!");
 	}
 
 }

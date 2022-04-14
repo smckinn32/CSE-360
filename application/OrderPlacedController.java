@@ -5,30 +5,40 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javax.imageio.IIOParam;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
 
 
 public class OrderPlacedController extends PipeLine {
 
-    // Function to update search box
+    // Function to update the search box.
     public void updateSearchBox() {
-        try {
-            Scanner s = new Scanner(new File("TextFiles/SearchMenu.txt"));
-            while (s.hasNext()) {
-                searchMenuArrayList.add(s.next());
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        System.out.println(searchMenuArrayList);
+        BufferedReader br;
 
-        // Adds the contents of the array to the list-view.
+        try {
+            br = new BufferedReader(new FileReader("TextFiles/SearchMenu.txt"));
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String fields = line.split(" ")[0];
+
+                searchMenuArrayList.add(fields);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
+
+        // Adds the contents of the arraylist into the list view
         searchBox.getItems().addAll(searchMenuArrayList);
 
         // Refreshes the list view.
         searchBox.refresh();
-        System.out.println(searchMenuArrayList);
+
     }
 }
