@@ -1,0 +1,330 @@
+/************************************************************
+ * Author: Aften Elliott
+ * Date: 3/25/2022
+ * Class: CSE360 Mon 3pm
+ ************************************************************/
+
+/* Imports custom font from file. */
+@font-face {
+    src: url("/fonts/Acumin.ttf");
+}
+
+/* Makes most elements in the text entry buttons in order to make them blend into the GUI. */
+.text-area, .text-area .viewport, .text-area .content {
+    -fx-background-color: transparent ;
+}
+
+/* Removes background from text field buttons to blend into the GUI. */
+.text-field {
+	-fx-background-color: transparent ;
+}
+
+/* Changing global text to grey and font to match GUI.*/
+.root {
+	-fx-dark-text-color: "#A6BCD0" ;
+ 	-fx-mid-text-color: "#A6BCD0" ;
+ 	-fx-light-text-color: "#A6BCD0" ;
+ 	//-fx-font-family: "acumin-pro-semi-condensed, sans-serif;";
+ 	-fx-font-family: "Acumin Pro SemiCondensed;";
+ }
+ /* Makes background of checkbox transparent and removes borders. */
+.check-box>.box {
+  -fx-background-insets: 0;
+  -fx-background-radius: 0;
+  -fx-background-color: transparent;
+}
+
+/* Changes unchecked state to custom image. */
+.check-box>.box>.mark {
+  -fx-background-image: url("/images/EyeOff.png");
+  -fx-background-position: center;
+  -fx-background-repeat: stretch;
+  -fx-shape: none;
+  -fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+.check-box:selected>.box>.mark {
+  -fx-background-color: transparent;
+  -fx-background-image: url("/images/EyeOn.png");
+}
+
+
+/* Changes Table-view for the CheckoutCart to transparent so that it blends into the GUI. */
+#cartListView {
+	-fx-background-color: transparent;
+  	//-fx-border-color: all-dialog-border-color;
+	//-fx-border-width: 1;
+	//-fx-table-header-border-color: transparent;
+	//-fx-table-cell-border-color: transparent;
+	//-fx-text-fill: white;
+}
+.table-view .column-header-background .filler {
+	-fx-background-color: "#A6BCD0";
+	-fx-border-width: 0;
+}
+
+#orderHistory {
+	-fx-background-color: transparent;
+}
+
+/* Changes the prompt and main text of the expiration color to white. */
+#CreditCardNumber {
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: white;
+}
+
+/* Changes the prompt and main text of the expiration color to white. */
+#Expiration {
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: white;
+}
+
+/* Changes the prompt and main text of the expiration color to white. */
+#CSV {
+	-fx-text-fill: white;
+	-fx-prompt-text-fill: white;
+}
+
+#CreditCardTable {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+
+#cartTableView {
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+	-fx-background-color: white;
+	-fx-border-width: 0;
+}
+
+.table-view .column-header {
+	-fx-text-fill: white;
+	-fx-border-color: lightgrey;
+}
+
+.table-row-cell,
+.table-row-cell:odd {
+	-fx-text-fill: white;
+	-fx-background-color: white;
+}
+
+.table-row-cell:selected {
+	//-fx-background-color: lightgrey;
+}
+
+.table-view .table-cell {
+	//-fx-border-color: lightgrey;
+}
+
+.table-row-cell:selected {
+   //-fx-background-color: steelblue;
+}
+
+.table-row-cell:selected .text {
+       //-fx-fill: purple ;
+}
+
+/* Changes color of text in the tableview header */
+.table-view .column-header .label {
+	-fx-font-weight: bold;
+}
+
+/* Changes color of search box */
+#searchBox {
+	-fx-border-color: "#A6BCD0";
+	-fx-background-color: white;
+}
+
+/* Centers the text on the search box and makes the background transparent View */
+#searchBox .list-cell {
+	//-fx-alignment: center;
+	-fx-background-color: transparent;
+}
+
+/* Centers the text on the Menu List View */
+#menuListView .list-cell {
+	-fx-alignment: center;
+	-fx-background-color: transparent;
+}
+
+/* Makes background of list view transparent */
+#cartListView .list-cell {
+	//-fx-background-color: transparent;
+	//-fx-background-color:"#748A9D";
+	-fx-font-size: 20pt ;
+}
+
+.list-view {
+	-fx-selection-bar: "#6200EE";
+}
+
+#menuListView {
+	-fx-background-color: transparent;
+	-fx-border-width: 1;
+	-fx-table-header-border-color: transparent;
+	-fx-table-cell-border-color: transparent;
+	-fx-text-fill: white;
+	-fx-font-size: 25pt ;
+	-fx-border-color: transparent;
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#AllSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#AllSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#veganSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#veganSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+
+/* Changes the checkbox images for the search preferences functionality */
+#vegetarianSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#vegetarianSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#paleoSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#paleoSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#ketoSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#ketoSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+/* Changes the checkbox images for the search preferences functionality */
+#lowcarbSwitch >.box>.mark {
+	-fx-background-image: url("/images/switch-off.png");
+	-fx-background-position: center;
+	-fx-background-repeat: stretch;
+	-fx-shape: none;
+	-fx-padding: 45px;
+}
+
+/* Changes checked state to custom image. */
+#lowcarbSwitch:selected>.box>.mark {
+	-fx-background-color: transparent;
+	-fx-background-image: url("/images/switch-on.png");
+}
+
+#quantityError {
+	-fx-alignment: center;
+}
+
+#BuffaloWings {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#BuffaloWings:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#ChickenMarsala {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#ChickenMarsala:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#FrenchFries {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#FrenchFries:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Lasagna {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Lasagna:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Spaghetti {
+	-fx-background-image: url("/images/AddToCartButton.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
+
+#Spaghetti:hover {
+	-fx-background-image: url("/images/addToCartHover.png");
+	-fx-border-style: none;
+	-fx-background-radius: 100;
+}
